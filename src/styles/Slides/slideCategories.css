@@ -1,0 +1,38 @@
+.featured-categories-slide {
+   display: flex;
+   overflow-x: hidden;
+   scroll-behavior: smooth;
+   padding: 10px;
+}
+
+.card-categorie {
+   position: relative;
+
+   height: 320px;
+}
+
+.card-categorie img {
+   height: 100%;
+   width: 480px;
+   object-fit: cover;
+   border-radius: 30px;
+}
+
+.name-categori {
+   position: absolute;
+   bottom: 20px;
+   left: 35px;
+}
+
+@media screen and (min-width: 1024px) {
+   .card-categorie {
+      min-width: 50%;
+   }
+}
+
+/* DESKTOP*/
+@media screen and (min-width: 1280px) {
+   .card-categorie {
+      min-width: 100%;
+   }
+}

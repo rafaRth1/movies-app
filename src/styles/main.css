@@ -1,0 +1,16 @@
+.main-content {
+   display: grid;
+   grid-template-columns: 20% 80%;
+}
+
+.navigation {
+   min-width: 13%;
+}
+
+.page-content {
+   min-width: 87%;
+}
+
+.content-footer {
+   grid-column: 1 / 3;
+}
