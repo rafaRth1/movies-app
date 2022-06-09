@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { createSlice } from '@reduxjs/toolkit';
 import clienteAxios from '../config/clienteAxios';
 import { Appthunk } from './store';
@@ -8,7 +9,9 @@ const initialState: Movies = {
    loading: false,
    moviesPopular: [],
    moviesUpComing: [],
-   moviesTopRated: [],
+   moviesTopRated: [], // Movies Reviews
+   moviesNowPlaying: [],
+   genders: [],
    error: false,
    modal: false,
    showNavigation: false,
@@ -25,6 +28,20 @@ const slice = createSlice({
    name: 'movieReducer',
    initialState,
    reducers: {
+      loadingStart(state: Movies) {
+         return {
+            ...state,
+            loading: true,
+         };
+      },
+
+      loadingFinish(state: Movies) {
+         return {
+            ...state,
+            loading: false,
+         };
+      },
+
       showMoviesStart(state: Movies) {
          return {
             ...state,
@@ -80,6 +97,22 @@ const slice = createSlice({
             moviesTopRated: action.payload,
          };
       },
+
+      getGenders(state: Movies, action: any) {
+         return {
+            ...state,
+            loading: false,
+            genders: action.payload,
+         };
+      },
+
+      getMoviesNowPlaying(state: Movies, action: any) {
+         return {
+            ...state,
+            loading: false,
+            moviesNowPlaying: action.payload,
+         };
+      },
    },
 });
 
@@ -117,7 +150,36 @@ export const fetchTopRated = (): Appthunk => {
    };
 };
 
+export const fetchGender = (): Appthunk => {
+   return async (dispatch) => {
+      const KEY = 'a8ae91218b79e102e9b4c8b24de34021';
+
+      try {
+         const gender = await axios.get(
+            `https://api.themoviedb.org/3/genre/movie/list?api_key=${KEY}&language=en-US`
+         );
+         dispatch(getGenders(gender.data.genres));
+      } catch (error) {
+         dispatch(showMoviesError());
+      }
+   };
+};
+
+export const fetchNowPlaying = (): Appthunk => {
+   return async (dispatch) => {
+      dispatch(loadingStart());
+      try {
+         const moviesNowPlaying = await clienteAxios.get(`/now_playing?page=2`);
+         dispatch(getMoviesNowPlaying(moviesNowPlaying.data.results));
+      } catch (error) {
+         dispatch(showMoviesError());
+      }
+   };
+};
+
 export const {
+   loadingStart,
+   loadingFinish,
    showMoviesStart,
    showMoviesError,
    showModal,
@@ -125,5 +187,7 @@ export const {
    getMoviesPopular,
    getMoviesUpcoming,
    getMoviesTopRated,
+   getGenders,
+   getMoviesNowPlaying,
 } = slice.actions;
 export default slice.reducer;

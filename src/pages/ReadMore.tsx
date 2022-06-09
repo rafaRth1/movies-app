@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import clienteAxios from '../config/clienteAxios';
 import { DataDetails } from '../interfaces/dataDetails';
 import { IoArrowRedoCircleOutline } from 'react-icons/io5';
-import { useAppSelector } from '../hooks/useRedux';
 import Spinner from '../components/Spinner';
 
 const ReadMoreMovies = () => {
@@ -28,8 +27,8 @@ const ReadMoreMovies = () => {
    }, []);
 
    return (
-      <div className='flex bg-neutral-800 h-full mt-5'>
-         <section className='w-3/5'>
+      <div className='flex flex-col-reverse xl:flex-row  bg-neutral-800 h-full xl:mt-5 px-5'>
+         <section className='xl:w-3/5'>
             {loading ? (
                <img
                   src={`https://image.tmdb.org/t/p/original${dataMovie?.backdrop_path}`}
@@ -92,7 +91,7 @@ const ReadMoreMovies = () => {
             </div>
          </section>
 
-         <aside className='w-2/5 ml-10'>
+         <aside className='xl:w-2/5 xl:ml-10'>
             <div className='p-5 sticky top-24'>
                <a href='#' className='flex items-center text-white text-xs uppercase mb-5'>
                   <IoArrowRedoCircleOutline className='mr-1' />

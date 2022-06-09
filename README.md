@@ -32,4 +32,9 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 For full documentation, visit [https://tailwindcss.com/].
 
+# Redux
+
+For full documentation, visit [https://es.redux.js.org/].
+
+
 

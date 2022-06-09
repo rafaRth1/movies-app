@@ -20,7 +20,7 @@ const MainPageMovie = () => {
    }, []);
 
    return (
-      <div className='bg-neutral-800 grid'>
+      <div className='bg-neutral-800'>
          <SliderRegular />
 
          <section className='slides'>

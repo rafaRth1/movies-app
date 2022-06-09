@@ -6,14 +6,14 @@ interface Props {
 
 const Input = ({ htmlFor, label, type }: Props) => {
    return (
-      <div className='p-5 flex items-center'>
-         <label htmlFor={htmlFor} className='text-white text-sm font-bold mr-20 w-1/4'>
+      <div className='lg:flex items-center mb-5'>
+         <label htmlFor={htmlFor} className='text-white text-sm mr-20 w-2/6'>
             {label}
          </label>
          <input
             type={type}
             id={htmlFor}
-            className='rounded-3xl  outline-none px-3 py-1 w-3/4  bg-neutral-700 text-gray-500'
+            className='rounded-3xl  outline-none px-3 py-2  bg-neutral-700 text-gray-500 my-2 w-full'
          />
       </div>
    );

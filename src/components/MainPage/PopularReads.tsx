@@ -18,7 +18,7 @@ const PopularReads = () => {
                   <img
                      src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                      alt='Image Backdrop'
-                     className='lg:w-80  xl:w-24 h-auto object-cover rounded-3xl cursor-pointer hover:opacity-50 transition-all px-2'
+                     className='w-1/2 md:w-96 lg:w-80 xl:w-24 h-auto object-cover rounded-3xl cursor-pointer hover:opacity-50 transition-all px-2'
                      onClick={() => navigate(`/read-more/${movie.id}`)}
                   />
 

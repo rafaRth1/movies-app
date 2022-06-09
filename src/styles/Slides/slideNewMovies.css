@@ -1,12 +1,12 @@
 .new-movies {
    display: flex;
-   overflow-x: hidden;
-   overflow-y: hidden;
+   overflow-x: scroll;
    scroll-behavior: smooth;
 }
 
 .card-new-movies {
-   height: 370px;
+   flex: 0 0 50%;
+   height: 100%;
    padding: 20px;
 }
 
@@ -17,9 +17,34 @@
    border-radius: 30px;
 }
 
+@media screen and (min-width: 640px) {
+   .new-movies {
+      height: 100%;
+      overflow-x: scroll;
+   }
+
+   .card-new-movies {
+      flex: 0 0 33.33333%;
+      height: 100%;
+   }
+}
+
+@media screen and (min-width: 768px) {
+   .new-movies {
+      height: 100%;
+      overflow-x: scroll;
+   }
+
+   .card-new-movies {
+      flex: 0 0 33.33333%;
+      height: 100%;
+   }
+}
+
 @media screen and (min-width: 1024px) {
    .new-movies {
       height: 420px;
+      overflow-x: hidden;
    }
 
    .card-new-movies {
@@ -37,6 +62,7 @@
 @media screen and (min-width: 1280px) {
    .new-movies {
       height: 340px;
+      overflow-x: hidden;
    }
 
    .card-new-movies {

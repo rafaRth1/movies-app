@@ -3,6 +3,8 @@ export interface Movies {
    moviesPopular: [];
    moviesUpComing: [];
    moviesTopRated: [];
+   moviesNowPlaying: [];
+   genders: [];
    error: boolean;
    modal: boolean;
    contentModal: ContentModal;
