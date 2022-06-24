@@ -1,19 +1,20 @@
 import { useRef } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks/useRedux';
-import { ResultMoviePopular } from '../../interfaces/movieInterfaces';
-import { getContentModal, showModal } from '../../redux/slice';
-import handleLeft from '../../helpers/handleLeft';
-import handleRigth from '../../helpers/handleRigth';
+import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
+import { ResultMoviePopular } from '../../../interfaces/movieInterfaces';
+import { getContentModal, showModal } from '../../../redux/slice';
+import handleLeft from '../../../helpers/handleLeft';
+import handleRigth from '../../../helpers/handleRigth';
 import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5';
 
-import '../../styles/Slides/slideArticles.css';
+import './sliderLatestArticle.css';
 
-const SlideArticles = () => {
+const SliderLatestArticle = () => {
    const dispatch = useAppDispatch();
    const moviesUpComing = useAppSelector((state) => state.reducer.moviesUpComing);
    const selectFirstImagePanel = moviesUpComing.slice(1, 4);
    const selectTwoImagePanel = moviesUpComing.slice(4, 10);
    let fila = useRef<HTMLDivElement>(null);
+   const theme = useAppSelector((state) => state.reducer.themeDark);
 
    const handleShowModal = (dateMovies: object) => {
       dispatch(getContentModal(dateMovies));
@@ -23,14 +24,14 @@ const SlideArticles = () => {
    return (
       <div className='content-slide-article p-3'>
          <div className='flex justify-between items-center p-1 mb-5'>
-            <h2 className='text-white text-xl font-medium'>Latest Article</h2>
+            <h2 className='text-black dark:text-white text-xl font-medium'>Latest Article</h2>
 
             <div className='arrows flex'>
                <button onClick={() => handleLeft(fila)}>
-                  <IoChevronBackOutline color='white' className={'cursor-pointer'} />
+                  <IoChevronBackOutline className={'cursor-pointer text-black dark:text-white'} />
                </button>
                <button onClick={() => handleRigth(fila)}>
-                  <IoChevronForwardOutline color='white' className={'cursor-pointer'} />
+                  <IoChevronForwardOutline className={'cursor-pointer text-black dark:text-white'} />
                </button>
             </div>
          </div>
@@ -84,4 +85,4 @@ const SlideArticles = () => {
    );
 };
 
-export default SlideArticles;
+export default SliderLatestArticle;

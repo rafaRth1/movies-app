@@ -1,24 +1,24 @@
 import { useRef } from 'react';
 import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5';
-import handleLeft from '../../helpers/handleLeft';
-import handleRigth from '../../helpers/handleRigth';
+import handleLeft from '../../../helpers/handleLeft';
+import handleRigth from '../../../helpers/handleRigth';
 
-import '../../styles/Slides/slideCategories.css';
+import './sliderFeatureCategory.css';
 
-const SlideCategories = () => {
+const SliderFeatureCategory = () => {
    let fila = useRef<HTMLDivElement>(null);
 
    return (
       <div className='content-featured-categories p-3'>
          <div className='flex justify-between items-center p-1 mb-5'>
-            <h2 className='text-white text-xl font-medium'>Featured Categories</h2>
+            <h2 className='text-black dark:text-white text-xl font-medium'>Featured Categories</h2>
 
             <div className='arrows flex'>
                <button onClick={() => handleLeft(fila)}>
-                  <IoChevronBackOutline color='white' className={'cursor-pointer'} />
+                  <IoChevronBackOutline className={'cursor-pointer text-black dark:text-white'} />
                </button>
                <button onClick={() => handleRigth(fila)}>
-                  <IoChevronForwardOutline color='white' className={'cursor-pointer'} />
+                  <IoChevronForwardOutline className={'cursor-pointer text-black dark:text-white'} />
                </button>
             </div>
          </div>
@@ -26,7 +26,7 @@ const SlideCategories = () => {
          <div className='featured-categories-slide' ref={fila}>
             <div className='card-categorie cursor-pointer px-5'>
                <img
-                  src='https://demo.ramsthemes.com/projects/ingmarwp/wp-content/uploads/2020/02/category8-01-500x323.jpg'
+                  src='https://demo.ramsthemes.com/projects/ingmarwp/wp-content/uploads/2020/05/tvshows-500x347.jpg'
                   alt='Image Categorie'
                />
                <div className='name-categori '>
@@ -36,7 +36,7 @@ const SlideCategories = () => {
 
             <div className='card-categorie cursor-pointer px-5'>
                <img
-                  src='https://demo.ramsthemes.com/projects/ingmarwp/wp-content/uploads/2020/02/category7-01-500x323.jpg'
+                  src='https://demo.ramsthemes.com/projects/ingmarwp/wp-content/uploads/2020/05/Cinema-500x347.jpg'
                   alt='Image Categorie'
                />
 
@@ -47,7 +47,7 @@ const SlideCategories = () => {
 
             <div className='card-categorie cursor-pointer px-5'>
                <img
-                  src='https://demo.ramsthemes.com/projects/ingmarwp/wp-content/uploads/2020/02/category1-01-500x323.jpg'
+                  src='https://demo.ramsthemes.com/projects/ingmarwp/wp-content/uploads/2020/05/feature-500x347.jpg'
                   alt='Image Categorie'
                />
                <div className='name-categori'>
@@ -57,7 +57,7 @@ const SlideCategories = () => {
 
             <div className='card-categorie cursor-pointer px-5'>
                <img
-                  src='https://demo.ramsthemes.com/projects/ingmarwp/wp-content/uploads/2020/04/category9-01-500x323.jpg'
+                  src='https://demo.ramsthemes.com/projects/ingmarwp/wp-content/uploads/2020/05/netflix-500x347.jpg'
                   alt='Image Categorie'
                />
                <div className='name-categori'>
@@ -69,4 +69,4 @@ const SlideCategories = () => {
    );
 };
 
-export default SlideCategories;
+export default SliderFeatureCategory;

@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { fetchGender, fetchTopRated } from '../../redux/slice';
-import { useAppDispatch, useAppSelector } from '../../hooks/useRedux';
-import { ResultTopRated } from '../../interfaces/topRated';
 import { useNavigate } from 'react-router-dom';
+import { fetchGender, fetchTopRated } from '../../../redux/slice';
+import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
+import { ResultTopRated } from '../../../interfaces/topRated';
 
 interface PropsFilter {
    id: number;
@@ -23,7 +23,7 @@ const Reviews = () => {
 
    return (
       <div className='content-review-page px-5 py-5'>
-         <h3 className='text-white text-2xl font-medium block my-3'>Reviews</h3>
+         <h3 className='text-black dark:text-white text-2xl font-medium block my-3'>Reviews</h3>
 
          <div className='movies-review'>
             <div className='flex flex-wrap'>
@@ -41,13 +41,13 @@ const Reviews = () => {
                      </div>
 
                      <h6
-                        className='text-white font-medium my-2 cursor-pointer'
+                        className='text-black dark:text-white font-medium my-2 cursor-pointer'
                         onClick={() => navigate(`/read-more/${movie.id}`)}
                      >
                         {movie.original_title}
                      </h6>
                      <div className='creator mb-3'>
-                        <a href='' className='text-white uppercase text-xs font-medium'>
+                        <a href='' className='text-black dark:text-white uppercase text-xs font-medium'>
                            By John Hamilton
                         </a>
                      </div>
@@ -63,7 +63,7 @@ const Reviews = () => {
                            );
                         }
                      })}
-                     <p className='text-white text-sm ml-2 mt-4'>{movie.release_date}</p>
+                     <p className='text-black dark:text-white text-sm ml-2 mt-4'>{movie.release_date}</p>
                   </div>
                ))}
             </div>

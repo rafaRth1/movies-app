@@ -1,0 +1,51 @@
+import { useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../hooks/useRedux';
+import { fetchResultSearch, showModalSearch } from '../redux/slice';
+import { IoCloseSharp } from 'react-icons/io5';
+
+import '../styles/Components/modalSearch.css';
+import { useNavigate } from 'react-router-dom';
+
+const ModalSearch = () => {
+   const [valueSearch, setValueSearch] = useState<string>('');
+   const dispatch = useAppDispatch();
+   const modalSearch = useAppSelector((state) => state.reducer.modalSearch);
+   const navigate = useNavigate();
+
+   const handleSubmit = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
+      e.preventDefault();
+      dispatch(fetchResultSearch(valueSearch));
+      navigate(`/result/${valueSearch}`);
+      dispatch(showModalSearch(false));
+   };
+
+   return (
+      <div className={`${modalSearch ? 'activeModalSearch' : ''} modal-search bg-neutral-800 z-50`}>
+         <form className={`form-modal-search z-50 ${modalSearch ? '' : 'modalAnimation'}`}>
+            <input
+               type='text'
+               placeholder='Write Movie'
+               className='bg-neutral-800 px-6 py-5 text-white text-xl block mb-4 outlile-none border-2 border-zinc-600 rounded-2xl'
+               value={valueSearch}
+               onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValueSearch(e.target.value)}
+            />
+            <input
+               type='submit'
+               value='Search Movie'
+               className='text-white bg-neutral-600 w-full p-3 rounded-2xl cursor-pointer'
+               onClick={(e) => handleSubmit(e)}
+            />
+         </form>
+         <IoCloseSharp
+            size={25}
+            className='cursor-pointer absolute right-10 top-10 z-50'
+            color='white'
+            onClick={() => dispatch(showModalSearch(false))}
+         />
+
+         <div className='absolute w-full h-full' onClick={() => dispatch(showModalSearch(false))}></div>
+      </div>
+   );
+};
+
+export default ModalSearch;

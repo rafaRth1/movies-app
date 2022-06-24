@@ -4,11 +4,15 @@ export interface Movies {
    moviesUpComing: [];
    moviesTopRated: [];
    moviesNowPlaying: [];
+   resultMoviesSearch: [];
    genders: [];
    error: boolean;
    modal: boolean;
+   modalSearch: boolean;
    contentModal: ContentModal;
    showNavigation: boolean;
+   activeNavigationMobile: boolean;
+   themeDark: boolean;
 }
 
 interface ContentModal {

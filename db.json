@@ -1,0 +1,40 @@
+{
+  "comments": [
+    {
+      "name": "Rafael",
+      "email": "rafarth1@outlook.com",
+      "website": "http://localhost:3000/read-more/718789",
+      "comment": "No me gusto la pelicula",
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "values": {
+        "firstName": "Rafael",
+        "lastName": "Alvarez",
+        "username": "rafarth1",
+        "email": "rafarth1@outlook.com",
+        "password": "3562133",
+        "confirmPassword": "3562133"
+      },
+      "id": 1
+    },
+    {
+      "firstName": "Rafael",
+      "lastName": "Alvarez",
+      "username": "rafarth2",
+      "email": "rafarth1@outlook.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "firstName": "Rafael",
+      "lastName": "Alvarez",
+      "username": "rafarth1",
+      "email": "rafarth1@outlook.com",
+      "password": "123456",
+      "id": 4
+    }
+  ]
+}

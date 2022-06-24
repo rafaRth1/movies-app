@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useAppSelector } from '../../hooks/useRedux';
-import { ResultMoviePopular } from '../../interfaces/movieInterfaces';
+import { useAppSelector } from '../../../hooks/useRedux';
+import { ResultMoviePopular } from '../../../interfaces/movieInterfaces';
 import { IoPerson } from 'react-icons/io5';
 
 const PopularReads = () => {
@@ -10,7 +10,7 @@ const PopularReads = () => {
 
    return (
       <div className='p-3 h-full'>
-         <h2 className='text-white text-xl font-medium p-1'>Popular Reads</h2>
+         <h2 className='text-black dark:text-white text-xl font-medium p-1'>Popular Reads</h2>
 
          <div className='popular-read'>
             {selectFirstImagePanel.map((movie: ResultMoviePopular) => (
@@ -23,13 +23,13 @@ const PopularReads = () => {
                   />
 
                   <div className='movie-data flex flex-col mx-2 w-full xl:justify-center '>
-                     <h6 className='text-white font-medium'>
+                     <h6 className='text-black dark:text-white font-medium'>
                         <Link to={`/read-more/${movie.id}`}>{movie.title}</Link>
                      </h6>
-                     <span className='text-white block'>{movie.release_date}</span>
-                     <span className='text-white block'>Voto Promedio: {movie.vote_average}</span>
-                     <span className='text-white flex gap-2 items-center'>
-                        <IoPerson color='white' />
+                     <span className='text-black dark:text-white block'>{movie.release_date}</span>
+                     <span className='text-black dark:text-white block'>Voto Promedio: {movie.vote_average}</span>
+                     <span className='text-black dark:text-white flex gap-2 items-center'>
+                        <IoPerson color='black' />
                         Vote Count: {movie.vote_count}
                      </span>
                   </div>

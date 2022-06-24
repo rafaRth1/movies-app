@@ -1,62 +1,53 @@
 import { Link } from 'react-router-dom';
+import { useAppSelector } from '../hooks/useRedux';
+import useResize from '../hooks/useResize';
 
 const Navigation = () => {
+   const { width } = useResize();
+   const listClassLI = 'hover:bg-neutral-300 dark:hover:bg-neutral-700 cursor-pointer rounded-2xl text-sm';
+
    return (
-      <div className='h-full mx-3'>
-         <nav className='sticky top-24 w-full'>
-            <ul className='text-white'>
-               <li className=' hover:bg-neutral-900 cursor-pointer rounded-2xl text-sm'>
-                  <Link to={'/reviews'} className='block py-4 px-5'>
-                     Reviews
-                  </Link>
-               </li>
-               <li className='hover:bg-neutral-900 cursor-pointer rounded-2xl text-sm'>
-                  <Link to={'/reviews'} className='block py-4 px-5'>
-                     Actors
-                  </Link>
-               </li>
-               <li className='hover:bg-neutral-900 cursor-pointer rounded-2xl text-sm'>
-                  <Link to={'/reviews'} className='block py-4 px-5'>
-                     Directors
-                  </Link>
-               </li>
-               <li className='hover:bg-neutral-900 cursor-pointer rounded-2xl text-sm'>
-                  <Link to={'/movie-archive'} className='block py-4 px-5'>
-                     Movie Archive
-                  </Link>
-               </li>
-               <li className='hover:bg-neutral-900 cursor-pointer rounded-2xl text-sm'>
-                  <Link to={'/reviews'} className='block py-4 px-5'>
-                     All News Movie
-                  </Link>
-               </li>
-               <li className='hover:bg-neutral-900 cursor-pointer rounded-2xl text-sm'>
-                  <Link to={'/reviews'} className='block py-4 px-5'>
-                     All Categories
-                  </Link>
-               </li>
-               <li className='hover:bg-neutral-900 cursor-pointer rounded-2xl text-sm'>
-                  <Link to={'/reviews'} className='block py-4 px-5'>
-                     Page Example
-                  </Link>
-               </li>
-               <li className='hover:bg-neutral-900 cursor-pointer rounded-2xl text-sm'>
-                  <Link to={'/reviews'} className='block py-4 px-5'>
-                     Page Example 2
-                  </Link>
-               </li>
-               <li className='hover:bg-neutral-900 cursor-pointer rounded-2xl text-sm'>
-                  <Link to={'/reviews'} className='block py-4 px-5'>
-                     Contact Page
-                  </Link>
-               </li>
-               <li className='hover:bg-neutral-900 cursor-pointer rounded-2xl text-sm'>
-                  <Link to={'/reviews'} className='block py-4 px-5'>
-                     Error 404 Page
-                  </Link>
-               </li>
-            </ul>
-         </nav>
+      <div
+         className={` pl-2 bg-neutral-100 dark:bg-neutral-800 transition-all h-full ${
+            width < 1024 ? 'hidden' : 'none'
+         }`}
+      >
+         <div className='h-full mx-3'>
+            <nav className='sticky top-24 w-full'>
+               <ul className='text-black dark:text-white'>
+                  <li className={listClassLI}>
+                     <Link to={'reviews'} className='block py-4 px-5'>
+                        Reviews
+                     </Link>
+                  </li>
+                  <li className={listClassLI}>
+                     <Link to={'movie-archive'} className='block py-4 px-5'>
+                        Movie Archive
+                     </Link>
+                  </li>
+                  <li className={listClassLI}>
+                     <Link to={'reviews'} className='block py-4 px-5'>
+                        Genres
+                     </Link>
+                  </li>
+                  <li className={listClassLI}>
+                     <Link to={'reviews'} className='block py-4 px-5'>
+                        All News
+                     </Link>
+                  </li>
+                  <li className={listClassLI}>
+                     <Link to={'reviews'} className='block py-4 px-5'>
+                        All Genres
+                     </Link>
+                  </li>
+                  <li className={listClassLI}>
+                     <Link to={'reviews'} className='block py-4 px-5'>
+                        Pages
+                     </Link>
+                  </li>
+               </ul>
+            </nav>
+         </div>
       </div>
    );
 };

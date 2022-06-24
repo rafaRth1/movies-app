@@ -11,10 +11,14 @@ const initialState: Movies = {
    moviesUpComing: [],
    moviesTopRated: [], // Movies Reviews
    moviesNowPlaying: [],
+   resultMoviesSearch: [],
    genders: [],
    error: false,
    modal: false,
-   showNavigation: false,
+   modalSearch: false,
+   showNavigation: true,
+   activeNavigationMobile: false,
+   themeDark: true,
    contentModal: {
       id: 0,
       img: '',
@@ -62,6 +66,34 @@ const slice = createSlice({
          return {
             ...state,
             modal: action.payload,
+         };
+      },
+
+      switchTheme(state: Movies, action: any) {
+         return {
+            ...state,
+            themeDark: action.payload,
+         };
+      },
+
+      showModalSearch(state: Movies, action: any) {
+         return {
+            ...state,
+            modalSearch: action.payload,
+         };
+      },
+
+      activeNavigation(state: Movies, action: any) {
+         return {
+            ...state,
+            showNavigation: action.payload,
+         };
+      },
+
+      activeNavigationMobileMobile(state: Movies, action: any) {
+         return {
+            ...state,
+            activeNavigationMobile: action.payload,
          };
       },
 
@@ -113,6 +145,14 @@ const slice = createSlice({
             moviesNowPlaying: action.payload,
          };
       },
+
+      getResultSearch(state: Movies, action: any) {
+         return {
+            ...state,
+            loading: false,
+            resultMoviesSearch: action.payload,
+         };
+      },
    },
 });
 
@@ -155,9 +195,7 @@ export const fetchGender = (): Appthunk => {
       const KEY = 'a8ae91218b79e102e9b4c8b24de34021';
 
       try {
-         const gender = await axios.get(
-            `https://api.themoviedb.org/3/genre/movie/list?api_key=${KEY}&language=en-US`
-         );
+         const gender = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${KEY}&language=en-US`);
          dispatch(getGenders(gender.data.genres));
       } catch (error) {
          dispatch(showMoviesError());
@@ -177,17 +215,38 @@ export const fetchNowPlaying = (): Appthunk => {
    };
 };
 
+export const fetchResultSearch = (movie: string): Appthunk => {
+   return async (dispatch) => {
+      const KEY = 'a8ae91218b79e102e9b4c8b24de34021';
+      dispatch(loadingStart());
+
+      try {
+         const moviesSearchResult = await axios.get(
+            `https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=${movie}`
+         );
+         dispatch(getResultSearch(moviesSearchResult.data.results));
+      } catch (error) {
+         dispatch(showMoviesError);
+      }
+   };
+};
+
 export const {
    loadingStart,
    loadingFinish,
    showMoviesStart,
    showMoviesError,
    showModal,
+   switchTheme,
+   showModalSearch,
+   activeNavigation,
+   activeNavigationMobileMobile,
    getContentModal,
    getMoviesPopular,
    getMoviesUpcoming,
    getMoviesTopRated,
    getGenders,
    getMoviesNowPlaying,
+   getResultSearch,
 } = slice.actions;
 export default slice.reducer;

@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../hooks/useRedux';
-import { showModal } from '../redux/slice';
+import { useAppDispatch, useAppSelector } from '../../hooks/useRedux';
+import { showModal } from '../../redux/slice';
 import { IoCloseSharp } from 'react-icons/io5';
 import { IoMenuOutline } from 'react-icons/io5';
 
-import '../styles/Components/modal.css';
+import './modal.css';
 
 const Modal = () => {
    const dispatch = useAppDispatch();
@@ -43,14 +43,11 @@ const Modal = () => {
             </div>
 
             <p className='text-white p-2 font-medium'>
-               Impression to discretion understood to we interested he excellence. Him remarkably use
-               projection collecting.
+               Impression to discretion understood to we interested he excellence. Him remarkably use projection
+               collecting.
             </p>
 
-            <Link
-               to={`/read-more/${contentModal.id}`}
-               className='text-white bg-indigo-700 block rounded-3xl m-4'
-            >
+            <Link to={`/read-more/${contentModal.id}`} className='text-white bg-indigo-700 block rounded-3xl m-4'>
                <div className='flex justify-center items-center gap-2'>
                   <IoMenuOutline />
                   <span>Full Read</span>

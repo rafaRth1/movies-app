@@ -1,4 +1,5 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from 'react';
+import { useAppSelector } from '../../hooks/useRedux';
 import { IoArrowBackCircleSharp, IoArrowForwardCircle } from 'react-icons/io5';
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
 
 const Pagination = ({ currentPage, setCurrentPage, totalNumPages, movies, amountPerPage }: Props) => {
    const pages: number[] = [];
+   const theme = useAppSelector((state) => state.reducer.themeDark);
 
    const renderPages = () => {
       for (let i = 1; i <= Math.ceil(movies.length / amountPerPage); i++) {
@@ -43,9 +45,8 @@ const Pagination = ({ currentPage, setCurrentPage, totalNumPages, movies, amount
             <div className='arrows flex items-center gap-5'>
                <IoArrowBackCircleSharp
                   size={30}
-                  color='white'
                   onClick={() => prevPage()}
-                  className={`${currentPage === 1 ? 'hidden' : 'block'}`}
+                  className={`${currentPage === 1 ? 'hidden' : 'block'} text-black dark:text-white`}
                />
                {
                   <ul className='list-none flex'>
@@ -63,9 +64,8 @@ const Pagination = ({ currentPage, setCurrentPage, totalNumPages, movies, amount
                }
                <IoArrowForwardCircle
                   size={30}
-                  color='white'
                   onClick={() => nextPage()}
-                  className={`${currentPage === totalNumPages ? 'hidden' : 'block'}`}
+                  className={`${currentPage === totalNumPages ? 'hidden' : 'block'} text-black dark:text-white`}
                />
             </div>
          </div>

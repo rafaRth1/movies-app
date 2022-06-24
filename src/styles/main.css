@@ -6,13 +6,8 @@
    min-width: 87%;
 }
 
-.content-footer {
-   grid-column: 1 / 3;
-}
-
 @media screen and (min-width: 1024px) {
    .main-content {
-      display: grid;
       grid-template-columns: 20% 80%;
    }
 }

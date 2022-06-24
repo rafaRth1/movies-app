@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { useAppDispatch } from '../hooks/useRedux';
 import { fetchMovies, fetchMoviesUpcoming, fetchTopRated } from '../redux/slice';
-import SliderRegular from '../components/MainPage/SliderRegular';
-import SlideArticles from '../components/MainPage/SlideArticles';
-import SlideCategories from '../components/MainPage/SlideCategories';
-import PopularReads from '../components/MainPage/PopularReads';
-import SlideReviews from '../components/MainPage/SlideReviews';
-import NewMovies from '../components/MainPage/NewMovies';
+import SliderForYou from '../components/MainPage/SliderForYou/SliderForYou';
+import SliderLatestArticle from '../components/MainPage/SliderLatestArticle/SliderLatestArticle';
+import SliderFeatureCategory from '../components/MainPage/SliderFeatureCategory/SliderFeatureCategory';
+import PopularRead from '../components/MainPage/PopularRead/PopularRead';
+import SliderFeatureReviews from '../components/MainPage/SliderFeatureReviews/SliderFeatureReviews';
+import NewMovies from '../components/MainPage/SliderNewMovies/SliderNewMovies';
 
 import '../styles/Slides/slides.css';
 
@@ -20,18 +20,18 @@ const MainPageMovie = () => {
    }, []);
 
    return (
-      <div className='bg-neutral-800'>
-         <SliderRegular />
+      <div className='bg-neutral-100 dark:bg-neutral-800 transition-all'>
+         <SliderForYou />
 
          <section className='slides'>
             <div className='slides-content'>
-               <SlideArticles />
-               <SlideCategories />
-               <SlideReviews />
+               <SliderLatestArticle />
+               <SliderFeatureCategory />
+               <SliderFeatureReviews />
             </div>
 
             <div className='content-popular-read'>
-               <PopularReads />
+               <PopularRead />
             </div>
 
             <NewMovies />
