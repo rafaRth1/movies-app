@@ -18,7 +18,7 @@ export const Login = () => {
 	const { formState, formValidation, onInputChange } = useForm(formData, formValidations);
 	const [formSubmitted, setFormSubmitted] = useState(false);
 
-	console.log(import.meta.env.VITE_API_URL);
+	console.log();
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -26,13 +26,10 @@ export const Login = () => {
 
 		try {
 			if (!Object.values(formState).includes('')) {
-				const { data } = await movieAppApi.post(
-					'https://movies-app-backend-rafarth1.herokuapp.com/api/auth',
-					{
-						username: formState.username,
-						password: formState.password,
-					}
-				);
+				const { data } = await movieAppApi.post(`${import.meta.env.VITE_API_URL}/auth`, {
+					username: formState.username,
+					password: formState.password,
+				});
 
 				console.log(data);
 			} else {

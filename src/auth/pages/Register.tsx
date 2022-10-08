@@ -34,7 +34,7 @@ export const Register = () => {
 
 		try {
 			if (!Object.values(formState).includes('') && formData.password === formData.confirmPassword) {
-				const { data } = await movieAppApi.post('https://movies-app-backend-rafarth1.herokuapp.com/api/auth/new-user', {
+				const { data } = await movieAppApi.post(`${import.meta.env.VITE_API_URL}/auth/new-user`, {
 					firstname: formState.firstName,
 					lastname: formState.lastName,
 					username: formState.username,
