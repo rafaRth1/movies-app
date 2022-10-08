@@ -24,7 +24,7 @@ export const Login = () => {
 
 		try {
 			if (!Object.values(formState).includes('')) {
-				const { data } = await movieAppApi.post('http://localhost:3001/api/auth', {
+				const { data } = await movieAppApi.post('https://movies-app-backend-rafarth1.herokuapp.com/api', {
 					username: formState.username,
 					password: formState.password,
 				});
