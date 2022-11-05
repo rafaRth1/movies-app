@@ -18,8 +18,6 @@ export const Login = () => {
 	const { formState, formValidation, onInputChange } = useForm(formData, formValidations);
 	const [formSubmitted, setFormSubmitted] = useState(false);
 
-	console.log();
-
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setFormSubmitted(!formSubmitted);
