@@ -1,0 +1,10 @@
+.container-main {
+	display: flex;
+	flex-direction: column;
+}
+
+@media (min-width: 990px) {
+	.container-main {
+		flex-direction: row;
+	}
+}

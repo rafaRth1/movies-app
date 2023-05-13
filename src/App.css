@@ -1,0 +1,36 @@
+/* font-family: 'Nunito Sans', sans-serif; */
+
+/* Light 	300
+	Regular 	400
+	Medium 	500
+	Bold 		700 
+*/
+
+/* font-family: 'Rubik', sans-serif; */
+
+/* Light 	300
+	Regular 	400
+	Bold 		700 
+*/
+
+html {
+	font-family: 'Nunito Sans', sans-serif !important;
+	/* font-size: 62.5%; */
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/* CLASS PERSONALIZATION */
+
+.h-22 {
+	height: 70px;
+}
+
+.top-22 {
+	top: 70px;
+}

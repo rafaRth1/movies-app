@@ -1,0 +1,59 @@
+.container-slider-foryou {
+	position: relative;
+}
+
+.container-slider-foryou .splide__pagination {
+	display: none;
+}
+
+.container-slider-foryou .splide__arrows {
+	position: absolute;
+	top: 20px;
+	right: 0;
+}
+
+.container-slider-foryou .splide__arrow--prev {
+	position: absolute;
+	left: -60px;
+}
+
+.container-slider-foryou .splide__arrow--next {
+	position: absolute;
+	right: 0;
+}
+
+.card-for-you-wrapper {
+	position: relative;
+	width: 100%;
+	height: 400px;
+}
+
+.card-for-you-wrapper article {
+	position: relative;
+	height: 100%;
+}
+
+.card-for-you-wrapper article::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 50%;
+	width: 100%;
+	z-index: 5;
+	background: linear-gradient(to top, rgb(12, 10, 15) 0%, rgba(0, 0, 0, 0) 100%);
+	pointer-events: none;
+	border-radius: 10px;
+}
+
+.card-for-you-wrapper img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.card-for-you-wrapper .action-buttons {
+	margin: 1rem;
+}

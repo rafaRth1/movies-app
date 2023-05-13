@@ -1,0 +1,9 @@
+.img-movie-information {
+   height: 36vh;
+}
+
+@media screen and (min-width: 1280px) {
+   .img-movie-information {
+      height: 78vh;
+   }
+}
