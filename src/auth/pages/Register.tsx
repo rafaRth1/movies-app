@@ -17,8 +17,8 @@ const formValidations = {
 	firstName: [(value: string) => value.length >= 2, 'El first NAme debe tener un @.'],
 	lastName: [(value: string) => value.length >= 2, 'El correo debe tener un @.'],
 	username: [(value: string) => value.length >= 2, 'El correo debe tener un @.'],
-	email: [(value: any) => value.includes('@'), 'El correo debe tener un @.'],
-	password: [(value: any) => value.length >= 6, 'El password debe tener mas de 6 caracteres.'],
+	email: [(value: string) => value.includes('@'), 'El correo debe tener un @.'],
+	password: [(value: string) => value.length >= 6, 'El password debe tener mas de 6 caracteres.'],
 	confirmPassword: [(value: string) => value.length >= 1, 'El nombre es obligatorio.'],
 };
 

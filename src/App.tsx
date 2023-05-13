@@ -4,11 +4,11 @@ import './App.css';
 
 function App() {
 	return (
-		<>
+		<div className='App min-h-screen relative'>
 			<Modal />
 			<ModalSearch />
 			<AppRouter />
-		</>
+		</div>
 	);
 }
 

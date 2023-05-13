@@ -2,7 +2,7 @@ import { IoArrowBackCircleSharp, IoArrowForwardCircle } from 'react-icons/io5';
 
 interface Props {
 	amountPage: number;
-	movies: [];
+	movies: any[];
 	currentPage: number;
 	setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 	totalNumPages: number;
@@ -62,7 +62,9 @@ export const Pagination = ({ amountPage, movies, currentPage, setCurrentPage, to
 						<IoArrowForwardCircle
 							size={30}
 							onClick={() => nextPage()}
-							className={`${currentPage === totalNumPages ? 'hidden' : 'block'} text-black dark:text-white`}
+							className={`${
+								currentPage === totalNumPages ? 'hidden' : 'block'
+							} text-black dark:text-white`}
 						/>
 					</div>
 				</div>

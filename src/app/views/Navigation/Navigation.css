@@ -1,0 +1,46 @@
+.navigate-content {
+	position: sticky;
+	top: 70px;
+	height: calc(100vh - 7rem);
+}
+
+.button-close {
+	display: block;
+}
+
+.transition-all {
+	transition-duration: 0.5s;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.active-menu-movil {
+	transform: translateX(0%) !important;
+}
+
+@media (min-width: 100px) {
+	.navigate {
+		height: 100%;
+		position: fixed;
+		right: 0;
+		top: 0;
+		transform: translateX(100%);
+		min-width: 320px;
+		z-index: 50;
+	}
+}
+
+@media (min-width: 990px) {
+	.navigate {
+		height: auto;
+		max-width: 295px;
+		min-width: 295px;
+		position: relative;
+		transform: translateX(0%);
+		z-index: 10;
+	}
+
+	.button-close {
+		display: none;
+	}
+}

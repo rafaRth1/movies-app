@@ -1,12 +1,17 @@
-export const TextInput = ({ label, ...props }: any) => {
-	const classInput =
-		'rounded-3xl  outline-none px-3 py-2  bg-neutral-300 dark:bg-neutral-700 text-gray-500 my-2 w-full transition-all';
+interface Props {
+	label: string;
+	[x: string]: any;
+}
+
+export const TextInput = ({ label, ...props }: Props) => {
+	const classInput: string =
+		'rounded-3xl outline-none px-3 py-2 border-2 border-neutral-500 dark:border-neutral-700 bg-transparent my-2 w-full transition-all text-black dark:text-white';
 
 	return (
 		<div className='items-center mb-5'>
 			<label
 				htmlFor={props.name}
-				className='text-black dark:text-white text-sm mr-20 w-2/6'>
+				className='text-black dark:text-white text-base mr-20 font-["rubik"]'>
 				{label}
 			</label>
 

@@ -1,27 +1,21 @@
-import { DataDetails } from '../../interfaces/dataDetails';
-import { Movies } from './types';
+import { MovieInformation, MovieReadMoreId } from './interfaces';
+import { ContentModal, Movies } from './types';
 
 export const initialState: Movies = {
-	loading: false,
 	moviesPopular: [],
 	moviesUpComing: [],
-	moviesTopRated: [], // Movies Reviews
+	moviesTopRated: [],
 	moviesNowPlaying: [],
-	movieReadMoreId: {},
-	resultMoviesSearch: [],
-	movieInformationId: {} as DataDetails,
+	moviesResultSearch: [],
 	genders: [],
+	movieInformation: {} as MovieInformation,
+	movieReadMoreId: {} as MovieReadMoreId,
+	contentModal: {} as ContentModal,
 	error: false,
 	modal: false,
 	modalSearch: false,
-	activeNavigationMobile: false,
-	valueSearch: '',
+	activeNavigation: false,
 	themeDark: true,
-	contentModal: {
-		id: 0,
-		img: '',
-		title: '',
-		overview: '',
-		date: '',
-	},
+	loading: false,
+	valueSearch: '',
 };

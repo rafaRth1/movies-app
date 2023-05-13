@@ -1,25 +1,33 @@
-import { DataDetails } from '../../interfaces/dataDetails';
+import {
+	MovieInformation,
+	MovieReadMoreId,
+	MoviesNowPlaying,
+	MoviesPopular,
+	MoviesResultSearch,
+	MoviesTopRated,
+	MoviesUpComing,
+} from './interfaces';
 
 export interface Movies {
 	loading: boolean;
-	moviesPopular: [];
-	moviesUpComing: [];
-	moviesTopRated: [];
-	moviesNowPlaying: [];
-	movieReadMoreId: any;
-	resultMoviesSearch: [];
-	movieInformationId: DataDetails;
+	moviesPopular: MoviesPopular[];
+	moviesUpComing: MoviesUpComing[];
+	moviesTopRated: MoviesTopRated[];
+	moviesNowPlaying: MoviesNowPlaying[];
+	movieInformation: MovieInformation;
+	moviesResultSearch: MoviesResultSearch[];
+	movieReadMoreId: MovieReadMoreId;
 	genders: [];
 	error: boolean;
 	modal: boolean;
 	modalSearch: boolean;
 	contentModal: ContentModal;
-	activeNavigationMobile: boolean;
+	activeNavigation: boolean;
 	valueSearch: string;
 	themeDark: boolean;
 }
 
-interface ContentModal {
+export interface ContentModal {
 	id: number;
 	img: string;
 	title: string;

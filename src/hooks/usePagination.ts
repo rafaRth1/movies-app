@@ -1,10 +1,13 @@
 import { useState } from 'react';
 
-export const usePagination = (movies: []) => {
+export const usePagination = (movies: any[]) => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const amountPage = 12;
 	const totalNumPages = Math.ceil(movies.length / amountPage);
-	const moviesPagination = movies.slice((currentPage - 1) * amountPage, (currentPage - 1) * amountPage + amountPage);
+	const moviesPagination = movies.slice(
+		(currentPage - 1) * amountPage,
+		(currentPage - 1) * amountPage + amountPage
+	);
 
 	return {
 		currentPage,

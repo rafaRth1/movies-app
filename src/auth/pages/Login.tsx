@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from '../../hooks';
-import { TextInput } from '../../components/formulary/TextInput/TextInput';
+import { TextInput } from '../../components';
 import movieAppApi from '../../api/movieAppApi';
 
 const formData = {

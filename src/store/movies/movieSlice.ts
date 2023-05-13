@@ -5,127 +5,77 @@ export const movieSlice = createSlice({
 	name: 'movieReducer',
 	initialState,
 	reducers: {
-		loadingStart(state: Movies) {
-			return {
-				...state,
-				loading: true,
-			};
+		loadingStart: (state: Movies) => {
+			state.loading = true;
 		},
 
-		showMoviesError(state: Movies) {
-			return {
-				...state,
-				loading: true,
-				error: true,
-			};
+		showMoviesError: (state: Movies) => {
+			state.loading = true;
+			state.error = true;
 		},
 
-		showModal(state: Movies, action: any) {
-			return {
-				...state,
-				modal: action.payload,
-			};
+		showModal: (state: Movies, action: any) => {
+			state.modal = action.payload;
 		},
 
-		switchTheme(state: Movies, action: any) {
-			return {
-				...state,
-				themeDark: action.payload,
-			};
+		switchTheme: (state: Movies, action: any) => {
+			state.themeDark = action.payload;
 		},
 
-		showModalSearch(state: Movies, action: any) {
-			return {
-				...state,
-				modalSearch: action.payload,
-			};
+		showModalSearch: (state: Movies, action: any) => {
+			state.modalSearch = action.payload;
 		},
 
-		activeNavigationMobileMobile(state: Movies, action: any) {
-			return {
-				...state,
-				activeNavigationMobile: action.payload,
-			};
+		handleActiveNavigation: (state: Movies, action: any) => {
+			state.activeNavigation = action.payload;
 		},
 
-		getContentModal(state: Movies, action: any) {
-			return {
-				...state,
-				contentModal: action.payload,
-			};
+		getContentModal: (state: Movies, action: any) => {
+			state.contentModal = action.payload;
 		},
 
-		// Nombre de la action
-		getMoviesPopular(state: Movies, action: any) {
-			// Funcion del reducer
-			return {
-				...state,
-				loading: false,
-				moviesPopular: action.payload,
-			};
+		getMoviesPopular: (state: Movies, action: any) => {
+			state.loading = false;
+			state.moviesPopular = action.payload;
 		},
 
-		getMoviesUpcoming(state: Movies, action: any) {
-			return {
-				...state,
-				loading: false,
-				moviesUpComing: action.payload,
-			};
+		getMoviesUpcoming: (state: Movies, action: any) => {
+			state.loading = false;
+			state.moviesUpComing = action.payload;
 		},
 
-		getMoviesTopRated(state: Movies, action: any) {
-			return {
-				...state,
-				loading: false,
-				moviesTopRated: action.payload,
-			};
+		getMoviesTopRated: (state: Movies, action: any) => {
+			state.loading = false;
+			state.moviesTopRated = action.payload;
 		},
 
-		getGenders(state: Movies, action: any) {
-			return {
-				...state,
-				loading: false,
-				genders: action.payload,
-			};
+		getMoviesNowPlaying: (state: Movies, action: any) => {
+			state.loading = false;
+			state.moviesNowPlaying = action.payload;
 		},
 
-		getMoviesNowPlaying(state: Movies, action: any) {
-			return {
-				...state,
-				loading: false,
-				moviesNowPlaying: action.payload,
-			};
+		getGenders: (state: Movies, action: any) => {
+			state.loading = false;
+			state.genders = action.payload;
 		},
 
-		getResultSearch(state: Movies, action: any) {
-			return {
-				...state,
-				loading: false,
-				resultMoviesSearch: action.payload,
-			};
+		getResultSearch: (state: Movies, action: any) => {
+			state.loading = false;
+			state.moviesResultSearch = action.payload;
 		},
 
-		getMovieReadMore(state: Movies, action: any) {
-			return {
-				...state,
-				loading: false,
-				movieReadMoreId: action.payload,
-			};
+		getMovieSearch: (state: Movies, action: any) => {
+			state.loading = false;
+			state.movieReadMoreId = action.payload;
 		},
 
-		getMovieInformationId(state: Movies, action: any) {
-			return {
-				...state,
-				loading: false,
-				movieInformationId: action.payload,
-			};
+		getMovieInformation: (state: Movies, action: any) => {
+			state.loading = false;
+			state.movieInformation = action.payload;
 		},
 
-		saveValueSearch(state: Movies, action: any) {
-			return {
-				...state,
-				valueSearch: action.payload,
-			};
+		saveValueSearch: (state: Movies, action: any) => {
+			state.valueSearch = action.payload;
 		},
 	},
 });
@@ -136,15 +86,15 @@ export const {
 	showModal,
 	switchTheme,
 	showModalSearch,
-	activeNavigationMobileMobile,
+	handleActiveNavigation,
 	getContentModal,
 	getMoviesPopular,
 	getMoviesUpcoming,
 	getMoviesTopRated,
+	getMovieInformation,
 	getGenders,
 	getMoviesNowPlaying,
 	getResultSearch,
-	getMovieReadMore,
-	getMovieInformationId,
+	getMovieSearch,
 	saveValueSearch,
 } = movieSlice.actions;

@@ -1,0 +1,40 @@
+.container-slider-categories .splide__track {
+	height: 350px;
+}
+
+.card-category-wrapper {
+	height: 100%;
+}
+
+.container-slider-categories .splide__pagination {
+	display: none;
+}
+
+.container-slider-categories .splide__arrows {
+	position: absolute;
+	top: 20px;
+	right: 0;
+}
+
+.container-slider-categories .splide__arrow--prev {
+	position: absolute;
+	left: -60px;
+}
+
+.container-slider-categories .splide__arrow--next {
+	position: absolute;
+	right: 0;
+}
+
+.card-category-wrapper img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 0.75rem;
+}
+
+.name-category {
+	position: absolute;
+	bottom: 20px;
+	left: 35px;
+}

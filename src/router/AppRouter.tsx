@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { AuthRotues } from '../auth/routes/AuthRotues';
-import { MoviesRoutes } from '../pages';
+import { MoviesRoutes } from '../app/routes/MoviesRoutes';
 
 export const AppRouter = () => {
 	return (
