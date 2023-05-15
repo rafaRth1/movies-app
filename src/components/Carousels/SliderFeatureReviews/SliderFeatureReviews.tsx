@@ -1,11 +1,10 @@
-import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
+import { Options, Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import { useAppSelector } from '../../../hooks';
 import { IoChevronForwardOutline } from 'react-icons/io5';
 
 import './sliderFeatureReviews.css';
 
-const option = {
-	rewind: true,
+const option: Options = {
 	gap: '1rem',
 	perMove: 1,
 };

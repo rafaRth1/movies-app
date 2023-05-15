@@ -4,6 +4,10 @@
 	height: calc(100vh - 7rem);
 }
 
+.navigate {
+	transition: 0.4s ease-in-out all;
+}
+
 .button-close {
 	display: block;
 }

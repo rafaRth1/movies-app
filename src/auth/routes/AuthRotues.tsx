@@ -20,3 +20,5 @@ export const AuthRotues = () => {
 		</Routes>
 	);
 };
+
+export default AuthRotues;

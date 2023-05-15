@@ -20,7 +20,7 @@ export const PopularReads = () => {
 						<div className='img-popular-read'>
 							<div className='img-popular-read-wrapper w-full h-full'>
 								<img
-									src={`https://image.tmdb.org/t/p/w342${movie.backdrop_path}`}
+									src={`https://image.tmdb.org/t/p/w300${movie.backdrop_path}`}
 									alt='Image Backdrop'
 									className='rounded-xl cursor-pointer hover:opacity-50 transition-all h-full object-cover'
 									onClick={() => navigate(`/read-more/${movie.id}`)}
@@ -29,7 +29,7 @@ export const PopularReads = () => {
 						</div>
 
 						<div className='data-popular-read'>
-							<h5 className='text-black dark:text-white font-bold font-["rubik"] text-xl mb-1'>
+							<h5 className='text-black dark:text-white font-bold text-xl mb-1'>
 								<Link to={`/read-more/${movie.id}`}>{movie.title}</Link>
 							</h5>
 

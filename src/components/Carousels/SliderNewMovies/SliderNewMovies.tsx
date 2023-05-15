@@ -4,8 +4,10 @@ import { Options, Splide, SplideSlide, SplideTrack } from '@splidejs/react-splid
 import { IoChevronForwardOutline } from 'react-icons/io5';
 
 import './sliderNewMovies.css';
+import { lazy } from 'react';
 
 const option: Options = {
+	rewind: true,
 	gap: '1rem',
 	perPage: 6,
 	perMove: 1,

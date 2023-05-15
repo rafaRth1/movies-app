@@ -20,6 +20,12 @@ export const Header = () => {
 		sizeIcon: 25,
 	};
 
+	const handleSwitch = () => {
+		toggleDarkMode(isDarkMode);
+		setThemeDark(!themeDark);
+		dispatch(switchTheme(themeDark));
+	};
+
 	return (
 		<div className='content-header-full sticky top-0 h-22 w-full z-30'>
 			<header className='h-22 w-full bg-neutral-200 dark:bg-neutral-900 transition-all py-3 px-5 flex justify-between items-center'>
@@ -67,9 +73,7 @@ export const Header = () => {
 
 					<div
 						className='switch-mode cursor-pointer'
-						onClick={() => {
-							toggleDarkMode(isDarkMode), setThemeDark(!themeDark), dispatch(switchTheme(themeDark));
-						}}>
+						onClick={handleSwitch}>
 						{isDarkMode ? (
 							<MdToggleOn
 								className={iconOption.className}

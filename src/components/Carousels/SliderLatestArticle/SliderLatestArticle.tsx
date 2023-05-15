@@ -6,13 +6,12 @@ import { IoChevronForwardOutline } from 'react-icons/io5';
 import './sliderLatestArticle.css';
 
 const option = {
-	rewind: true,
 	gap: '1rem',
 	perMove: 1,
 };
 
 export const SliderLatestArticle = () => {
-	const moviesUpComing = useAppSelector((state) => state.movie.moviesUpComing);
+	const { moviesUpComing } = useAppSelector((state) => state.movie);
 	const dispatch = useAppDispatch();
 
 	const handleShowModal = (dateMovies: object) => {

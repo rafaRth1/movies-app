@@ -102,35 +102,40 @@ export const BodyMovieInformation = () => {
 							Productions Companies
 						</h5>
 
-						{movieInformation.production_companies?.map((companie) => (
-							<div
-								className='card-companies items-center p-2'
-								key={companie.id}>
-								<picture>
-									<img
-										src={
-											!!companie.logo_path
-												? `https://image.tmdb.org/t/p/w500${companie.logo_path}`
-												: `https://img.freepik.com/vector-premium/ilustracion-personaje-misterioso-mafia_23-2148460671.jpg?w=740`
-										}
-										alt='Logo Companie'
-									/>
-								</picture>
+						<div className='production-companie-wrapper'>
+							{movieInformation.production_companies?.map((companie) => (
+								<div
+									className='card-companies items-center p-2'
+									key={companie.id}>
+									<picture>
+										<img
+											src={
+												!!companie.logo_path
+													? `https://image.tmdb.org/t/p/w154${companie.logo_path}`
+													: `https://img.freepik.com/vector-premium/ilustracion-personaje-misterioso-mafia_23-2148460671.jpg?w=160`
+											}
+											alt='Logo Companie'
+											className='rounded-full cursor-pointer'
+										/>
+									</picture>
 
-								<span className='text-black dark:text-white ml-4 flex-1'>{companie.name}</span>
-							</div>
-						))}
+									<span className='text-black dark:text-white dark:hover:text-indigo-700 ml-4 flex-1 cursor-pointer'>
+										{companie.name}
+									</span>
+								</div>
+							))}
+						</div>
 					</div>
 				</div>
 
 				<div className='movie-information-aside px-3'>
 					<div className='play-trailer w-full'>
-						<button className='text-black dark:text-white text-xl bg-indigo-800 hover:bg-indigo-900 transition-all px-4 py-3 w-full my-2 rounded-2xl'>
+						<button className='text-white text-xl bg-indigo-800 hover:bg-indigo-900 transition-all px-4 py-3 w-full my-2 rounded-2xl'>
 							Play Trailer
 						</button>
 
 						<button
-							className='text-black dark:text-white text-xl bg-indigo-800 hover:bg-indigo-900 transition-all px-4 py-3 w-full my-2 rounded-2xl'
+							className='text-white text-xl bg-indigo-800 hover:bg-indigo-900 transition-all px-4 py-3 w-full my-2 rounded-2xl'
 							onClick={() => navigate(-1)}>
 							See All Movie
 						</button>

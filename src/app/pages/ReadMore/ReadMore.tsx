@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchSearchMovieId } from '../../../../store';
-import { useAppDispatch, useAppSelector } from '../../../../hooks';
-import { AsideReadMore, FormReadMore, BodyReadMore } from '../views';
-import { Spinner } from '../../../../components';
+import { fetchSearchMovieId } from '../../../store';
+import { useAppDispatch, useAppSelector } from '../../../hooks';
+import { AsideReadMore, FormReadMore, BodyReadMore } from './views';
+import { Spinner } from '../../../components';
 
-import ImageDefault from '../../../../assets/ImageDefault_1280x720.png';
+import ImageDefault from '../../../assets/ImageDefault_1280x720.png';
 import './ReadMore.css';
 
 export const ReadMore = () => {

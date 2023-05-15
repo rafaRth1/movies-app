@@ -1,6 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { MovieLayout } from '../layout/MovieLayout';
 import { MainPage, MovieArchive, MovieInformation, ReadMore, ResultSearch, Reviews } from '../pages';
+import routes from './routes';
+
+console.log('Prueba');
 
 export const MoviesRoutes = () => {
 	return (
@@ -34,6 +37,14 @@ export const MoviesRoutes = () => {
 					path='movie-information/:id'
 					element={<MovieInformation />}
 				/>
+
+				{/* {routes.map(({ to, path, Component }) => (
+					<Route
+						key={to}
+						path={path}
+						element={<Component />}
+					/>
+				))} */}
 			</Route>
 
 			<Route
@@ -43,3 +54,5 @@ export const MoviesRoutes = () => {
 		</Routes>
 	);
 };
+
+export default MoviesRoutes;

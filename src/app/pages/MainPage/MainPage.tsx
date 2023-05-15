@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useEffect } from 'react';
 import { useAppDispatch } from '../../../hooks';
 import { startMoviesNewShow } from '../../../store/movies';
@@ -10,14 +11,19 @@ import {
 	SliderNewMovies,
 } from '../../../components/Carousels';
 
-import '@splidejs/react-splide/css';
 import './MainPage.css';
 
 export const MainPage = () => {
 	const dispatch = useAppDispatch();
 
 	useEffect(() => {
-		dispatch(startMoviesNewShow());
+		const cancelToken = axios.CancelToken.source();
+
+		dispatch(startMoviesNewShow(cancelToken));
+
+		return () => {
+			cancelToken.cancel();
+		};
 	}, []);
 
 	return (

@@ -74,9 +74,9 @@ export const SliderForYou = () => {
 							<SplideSlide
 								key={movie.id}
 								className='card-for-you-wrapper'>
-								<article>
+								<article className='cursor-grab'>
 									<img
-										src={`https://image.tmdb.org/t/p/w780${movie.backdrop_path}`}
+										src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
 										alt='Img Movie'
 									/>
 

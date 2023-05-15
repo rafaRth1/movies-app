@@ -17,6 +17,16 @@
 	width: 100%;
 }
 
+.production-companie-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.production-companie .card-companies {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
 .production-companie .card-companies {
 	display: flex;
 	flex-direction: column;
@@ -80,6 +90,11 @@
 	.post-related-link picture {
 		flex: 0 0 25%;
 		max-width: 25%;
+	}
+
+	.production-companie .card-companies {
+		flex: 0 0 50%;
+		max-width: 50%;
 	}
 }
 

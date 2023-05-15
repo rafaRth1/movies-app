@@ -24,3 +24,5 @@ export const MovieInformation = () => {
 		</div>
 	);
 };
+
+export default MovieInformation;

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { CancelTokenSource } from 'axios';
 import { Appthunk } from '../store';
 import clienteAxios from '../../config/clienteAxios';
 import {
@@ -14,13 +14,17 @@ import {
 	showMoviesError,
 } from './movieSlice';
 
-export const startMoviesNewShow = (): Appthunk => {
+export const startMoviesNewShow = (cancelToken: CancelTokenSource): Appthunk => {
 	return async (dispatch) => {
 		dispatch(loadingStart());
 		try {
-			const moviePopular = await clienteAxios.get('/movie/popular');
-			const moviesUpcoming = await clienteAxios.get('/movie/upcoming');
-			const movieTop = await clienteAxios.get('/movie/top_rated');
+			const config = {
+				cancelToken: cancelToken.token,
+			};
+
+			const moviePopular = await clienteAxios.get('/movie/popular', config);
+			const moviesUpcoming = await clienteAxios.get('/movie/upcoming', config);
+			const movieTop = await clienteAxios.get('/movie/top_rated', config);
 
 			Promise.all([moviePopular, moviesUpcoming, movieTop]).then((responses) => {
 				dispatch(getMoviesPopular(responses[0].data.results));
