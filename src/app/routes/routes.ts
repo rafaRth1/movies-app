@@ -11,10 +11,12 @@ interface Route {
 
 const MainPageLazy = lazy(() => import('../pages/MainPage/MainPage'));
 const ReadMoreLazy = lazy(() => import('../pages/ReadMore/ReadMore'));
-const ReviewsLazy = lazy(() => import('../pages/Reviews/Reviews'));
-const MovieArchiveLazy = lazy(() => import('../pages/MovieArchive/MovieArchive'));
+const ReviewsLazy = lazy(() => import('../pages/ReviewsPage/ReviewsPage'));
+const MovieArchiveLazy = lazy(() => import('../pages/MovieArchivePage/MovieArchivePage'));
 const ResultSearchLazy = lazy(() => import('../pages/ResultSearch/ResultSearch'));
-const MovieInformationLazy = lazy(() => import('../pages/MovieInformation/MovieInformation'));
+const MovieInformationLazy = lazy(() => import('../pages/MovieInformation/MovieInformationPage'));
+const GenresPageLazy = lazy(() => import('../pages/GenresPage/GenresPage'));
+const CategoriesPageLazy = lazy(() => import('../pages/CategoriesPage/CategoriesPage'));
 
 export const routes: Route[] = [
 	{
@@ -57,6 +59,20 @@ export const routes: Route[] = [
 		path: 'movie-information/:id',
 		Component: MovieInformationLazy,
 		name: 'MovieInformationLazy',
+	},
+
+	{
+		to: '/genres',
+		path: 'genres/:id',
+		Component: GenresPageLazy,
+		name: 'GenresLazy',
+	},
+
+	{
+		to: '/all-categories',
+		path: 'all-categories',
+		Component: CategoriesPageLazy,
+		name: 'CategoriesPageLazy',
 	},
 ];
 

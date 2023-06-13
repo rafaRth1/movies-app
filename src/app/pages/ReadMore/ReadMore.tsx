@@ -24,7 +24,7 @@ export const ReadMore = () => {
 	}, [id]);
 
 	return (
-		<div className='container-read-more bg-neutral-100 dark:bg-neutral-800 h-full px-5 transition-all'>
+		<div className='container-page-read-more bg-neutral-100 dark:bg-neutral-800 h-full px-5 transition-all'>
 			{!loading ? (
 				<>
 					<section className='xl:w-3/5 p-3'>

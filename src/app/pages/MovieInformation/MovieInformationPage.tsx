@@ -7,7 +7,7 @@ import { useAppDispatch } from '../../../hooks';
 
 import './MovieInformation.css';
 
-export const MovieInformation = () => {
+export const MovieInformationPage = () => {
 	const { id } = useParams();
 	const dispatch = useAppDispatch();
 
@@ -25,4 +25,4 @@ export const MovieInformation = () => {
 	);
 };
 
-export default MovieInformation;
+export default MovieInformationPage;

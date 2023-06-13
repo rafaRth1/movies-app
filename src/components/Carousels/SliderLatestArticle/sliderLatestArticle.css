@@ -3,7 +3,7 @@
 }
 
 .container-slider-article .splide__track {
-	height: 350px;
+	height: 380px;
 }
 
 .container-slider-article .splide__pagination {
@@ -33,14 +33,13 @@
 	height: 100%;
 }
 
-.card-article-one-wrapper figure:nth-child(1) {
+.card-article-one-wrapper div:nth-child(1) {
 	grid-column: 1 /3;
 	grid-row: 1 / 3;
 }
 
 .card-article-one-wrapper figure {
 	transition: 0.2s ease-in-out all;
-	padding: 5px;
 }
 
 .card-article-one-wrapper figure:hover {
@@ -65,5 +64,4 @@
 .card-article-two-wrapper img {
 	height: 100%;
 	width: 100%;
-	padding: 5px;
 }

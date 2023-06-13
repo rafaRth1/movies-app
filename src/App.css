@@ -1,7 +1,12 @@
+/* :root {
+	--width-nav: 0;
+} */
+
 html {
-	font-family: 'Nunito Sans', sans-serif !important;
-	/* font-size: 62.5%; */
+	font-family: 'Rubik', sans-serif !important;
 	box-sizing: border-box;
+	min-width: 360px;
+	--width-nav: 0px;
 }
 
 *,
@@ -10,27 +15,8 @@ html {
 	box-sizing: inherit;
 }
 
-/* CLASS PERSONALIZATION */
-
-.h-22 {
-	height: 70px;
-}
-
-.top-22 {
-	top: 70px;
-}
-
-body::-webkit-scrollbar {
-	width: 23px;
-	height: 8px;
-}
-
-body::-webkit-scrollbar-thumb {
-	background: rgb(52, 56, 58);
-	border-radius: 4px;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-	background: rgb(58, 59, 59);
-	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+@media (min-width: 990px) {
+	html {
+		--width-nav: 295px;
+	}
 }

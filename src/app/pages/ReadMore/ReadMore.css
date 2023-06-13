@@ -1,10 +1,10 @@
-.container-read-more {
+.container-page-read-more {
 	display: flex;
 	flex-direction: column-reverse;
 }
 
 @media (min-width: 1200px) {
-	.container-read-more {
+	.container-page-read-more {
 		flex-direction: row;
 		margin-top: 15px;
 	}

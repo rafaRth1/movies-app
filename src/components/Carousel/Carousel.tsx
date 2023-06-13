@@ -16,9 +16,7 @@ export const Carousel = ({ children, subTitle, styles }: PropsSlider) => {
 
 	return (
 		<div className='slider -mx-3'>
-			<h2 className='text-black dark:text-white text-xl font-bold font-["Nunito Sans"] mb-6 px-3'>
-				{subTitle}
-			</h2>
+			<h2 className='text-black dark:text-white text-xl font-bold mb-6 px-3'>{subTitle}</h2>
 
 			<section className='slider-container'>
 				<div

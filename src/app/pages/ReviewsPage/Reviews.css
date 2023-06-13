@@ -1,0 +1,47 @@
+.card-movie-review {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+.card-review-img {
+	height: calc((100vw - 32px - (var(--width-nav)) - (16px * 1)) / (1 * 1.5));
+	max-height: 253px;
+}
+
+.body-review .genres {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+	.card-movie-review {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+
+	.card-review-img {
+		height: calc((100vw - 32px - (var(--width-nav)) - (16px * 2)) / (2 * 1.5));
+	}
+}
+
+@media (min-width: 1200px) {
+	.card-movie-review {
+		flex: 0 0 33.333333%;
+		max-width: 33.333333%;
+	}
+
+	.card-review-img {
+		height: calc((100vw - 32px - var(--width-nav) - (16px * 3)) / (3 * 1.5));
+	}
+}
+
+@media (min-width: 1500px) {
+	.card-movie-review {
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+
+	.card-review-img {
+		height: calc((100vw - 32px - var(--width-nav) - (16px * 4)) / (4 * 1.5));
+	}
+}

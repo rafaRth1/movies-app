@@ -115,7 +115,7 @@ export const BodyMovieInformation = () => {
 													: `https://img.freepik.com/vector-premium/ilustracion-personaje-misterioso-mafia_23-2148460671.jpg?w=160`
 											}
 											alt='Logo Companie'
-											className='rounded-full cursor-pointer'
+											className='rounded-lg cursor-pointer'
 										/>
 									</picture>
 

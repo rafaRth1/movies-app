@@ -1,4 +1,4 @@
-interface Categories {
+export interface Categories {
 	img: string;
 	name: string;
 }

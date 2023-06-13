@@ -49,3 +49,5 @@ export const ModalSearch = () => {
 		</div>
 	);
 };
+
+export default ModalSearch;

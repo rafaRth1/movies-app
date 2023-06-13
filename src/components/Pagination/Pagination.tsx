@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { IoArrowBackCircleSharp, IoArrowForwardCircle } from 'react-icons/io5';
 
 interface Props {
@@ -6,10 +7,22 @@ interface Props {
 	currentPage: number;
 	setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 	totalNumPages: number;
+	name?: string;
 }
 
-export const Pagination = ({ amountPage, movies, currentPage, setCurrentPage, totalNumPages }: Props) => {
+export const Pagination = ({
+	amountPage,
+	movies,
+	currentPage,
+	setCurrentPage,
+	totalNumPages,
+	name,
+}: Props) => {
 	const pages: any[] = [];
+
+	for (let i = 1; i <= Math.ceil(movies.length / amountPage); i++) {
+		pages.push(i);
+	}
 
 	const prevPage = () => {
 		if (currentPage > 1) {
@@ -28,13 +41,9 @@ export const Pagination = ({ amountPage, movies, currentPage, setCurrentPage, to
 		setCurrentPage(Number(target.id));
 	};
 
-	const renderPages = () => {
-		for (let i = 1; i <= Math.ceil(movies.length / amountPage); i++) {
-			pages.push(i);
-		}
-	};
-
-	renderPages();
+	useEffect(() => {
+		setCurrentPage(1);
+	}, [name]);
 
 	return (
 		<>
@@ -43,8 +52,10 @@ export const Pagination = ({ amountPage, movies, currentPage, setCurrentPage, to
 					<div className='arrows flex items-center gap-5'>
 						<IoArrowBackCircleSharp
 							size={30}
-							onClick={() => prevPage()}
-							className={`${currentPage === 1 ? 'hidden' : 'block'} text-black dark:text-white`}
+							onClick={prevPage}
+							className={`${
+								currentPage === 1 ? 'hidden' : 'block'
+							} text-black dark:text-white cursor-pointer`}
 						/>
 						{
 							<ul className='list-none flex'>
@@ -61,10 +72,10 @@ export const Pagination = ({ amountPage, movies, currentPage, setCurrentPage, to
 						}
 						<IoArrowForwardCircle
 							size={30}
-							onClick={() => nextPage()}
+							onClick={nextPage}
 							className={`${
 								currentPage === totalNumPages ? 'hidden' : 'block'
-							} text-black dark:text-white`}
+							} text-black dark:text-white cursor-pointer`}
 						/>
 					</div>
 				</div>

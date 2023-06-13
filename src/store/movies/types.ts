@@ -1,6 +1,8 @@
 import {
+	InterfaceAllCategory,
 	MovieInformation,
 	MovieReadMoreId,
+	MoviesGenreType,
 	MoviesNowPlaying,
 	MoviesPopular,
 	MoviesResultSearch,
@@ -16,8 +18,10 @@ export interface Movies {
 	moviesNowPlaying: MoviesNowPlaying[];
 	movieInformation: MovieInformation;
 	moviesResultSearch: MoviesResultSearch[];
+	moviesGenreType: MoviesGenreType[];
+	arrayAllCategories: InterfaceAllCategory[];
 	movieReadMoreId: MovieReadMoreId;
-	genders: [];
+	genres: [];
 	error: boolean;
 	modal: boolean;
 	modalSearch: boolean;

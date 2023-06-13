@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect } from 'react';
-import { useAppDispatch } from '../../../hooks';
+import { useAppDispatch, useAppSelector } from '../../../hooks';
 import { startMoviesNewShow } from '../../../store/movies';
 import {
 	PopularReads,
@@ -12,9 +12,11 @@ import {
 } from '../../../components/Carousels';
 
 import './MainPage.css';
+import { Spinner } from '../../../components';
 
 export const MainPage = () => {
 	const dispatch = useAppDispatch();
+	const { moviesPopular } = useAppSelector((state) => state.movie);
 
 	useEffect(() => {
 		const cancelToken = axios.CancelToken.source();
@@ -28,21 +30,26 @@ export const MainPage = () => {
 
 	return (
 		<div className='bg-neutral-100 dark:bg-neutral-800 transition-all p-2'>
-			<SliderForYou />
+			{moviesPopular.length === 0 ? (
+				<Spinner className='h-40' />
+			) : (
+				<>
+					<SliderForYou />
 
-			<section className='slides'>
-				<div className='slides-content'>
-					<SliderLatestArticle />
-					<SliderFeatureCategory />
-					<SliderFeatureReviews />
-				</div>
+					<section className='slides'>
+						<div className='slides-content'>
+							<SliderLatestArticle />
+							<SliderFeatureReviews />
+						</div>
 
-				<div className='content-popular-read'>
-					<PopularReads />
-				</div>
-			</section>
+						<div className='content-popular-read'>
+							<PopularReads />
+						</div>
+					</section>
 
-			<SliderNewMovies />
+					<SliderNewMovies />
+				</>
+			)}
 		</div>
 	);
 };

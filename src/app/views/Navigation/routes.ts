@@ -1,6 +1,7 @@
 interface Route {
 	to: string;
 	name: string;
+	subPath?: boolean;
 }
 
 export const routes: Route[] = [
@@ -15,22 +16,13 @@ export const routes: Route[] = [
 	},
 
 	{
+		to: 'all-categories',
+		name: 'All Categories',
+	},
+
+	{
 		to: 'genres',
-		name: 'Genres',
-	},
-
-	{
-		to: 'all-news',
-		name: 'All News',
-	},
-
-	{
-		to: 'all-genres',
-		name: 'All News',
-	},
-
-	{
-		to: 'pages',
-		name: 'Pages',
+		name: 'All Genres',
+		subPath: true,
 	},
 ];

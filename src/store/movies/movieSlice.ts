@@ -9,6 +9,10 @@ export const movieSlice = createSlice({
 			state.loading = true;
 		},
 
+		loadingFinish: (state: Movies) => {
+			state.loading = false;
+		},
+
 		showMoviesError: (state: Movies) => {
 			state.loading = true;
 			state.error = true;
@@ -35,17 +39,14 @@ export const movieSlice = createSlice({
 		},
 
 		getMoviesPopular: (state: Movies, action: any) => {
-			state.loading = false;
 			state.moviesPopular = action.payload;
 		},
 
 		getMoviesUpcoming: (state: Movies, action: any) => {
-			state.loading = false;
 			state.moviesUpComing = action.payload;
 		},
 
 		getMoviesTopRated: (state: Movies, action: any) => {
-			state.loading = false;
 			state.moviesTopRated = action.payload;
 		},
 
@@ -56,7 +57,12 @@ export const movieSlice = createSlice({
 
 		getGenders: (state: Movies, action: any) => {
 			state.loading = false;
-			state.genders = action.payload;
+			state.genres = action.payload;
+		},
+
+		getMoviesGenreType: (state: Movies, action: any) => {
+			state.loading = false;
+			state.moviesGenreType = action.payload;
 		},
 
 		getResultSearch: (state: Movies, action: any) => {
@@ -74,6 +80,11 @@ export const movieSlice = createSlice({
 			state.movieInformation = action.payload;
 		},
 
+		getAllCategories: (state: Movies, action: any) => {
+			state.loading = false;
+			state.arrayAllCategories = action.payload;
+		},
+
 		saveValueSearch: (state: Movies, action: any) => {
 			state.valueSearch = action.payload;
 		},
@@ -82,6 +93,7 @@ export const movieSlice = createSlice({
 
 export const {
 	loadingStart,
+	loadingFinish,
 	showMoviesError,
 	showModal,
 	switchTheme,
@@ -97,4 +109,6 @@ export const {
 	getResultSearch,
 	getMovieSearch,
 	saveValueSearch,
+	getMoviesGenreType,
+	getAllCategories,
 } = movieSlice.actions;

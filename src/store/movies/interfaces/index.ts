@@ -5,3 +5,5 @@ export * from './MoviesNowPlaying';
 export * from './MoviesPopular';
 export * from './MovieInformation';
 export * from './MoviesResultSearch';
+export * from './MoviesGenreType';
+export * from './InterfaceAllCategory';

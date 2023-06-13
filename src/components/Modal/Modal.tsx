@@ -4,6 +4,7 @@ import { getContentModal, showModal } from '../../store';
 import { IoCloseSharp, IoMenuOutline } from 'react-icons/io5';
 
 import './modal.css';
+import { ImageBox } from '../ImageBox/ImageBox';
 
 export const Modal = () => {
 	const dispatch = useAppDispatch();
@@ -31,22 +32,23 @@ export const Modal = () => {
 					/>
 				</div>
 
-				<picture className='modal-img'>
-					<img
-						src={
-							contentModal.img
-								? `https://image.tmdb.org/t/p/w500${contentModal.img}`
-								: 'https://educacion30.b-cdn.net/wp-content/uploads/2021/04/peliculas-basadas-en-personajes-historicos-978x571.jpg'
-						}
-						alt='image'
-					/>
-				</picture>
+				<figure className='modal-img'>
+					{contentModal?.img ? (
+						<ImageBox
+							data-img={`https://image.tmdb.org/t/p/w500${contentModal?.img}`}
+							width='100%'
+							height='250px'
+							alt='image'
+							className='h-full px-3'
+						/>
+					) : null}
+				</figure>
 
 				<div className='date p-3'>
 					<span className='text-white block text-xs'>{contentModal.date}</span>
 				</div>
 
-				<p className='text-white px-3 py-0 font-medium'>{contentModal.overview}</p>
+				<p className='text-white px-3 py-0'>{contentModal.overview}</p>
 
 				<Link
 					to={`/read-more/${contentModal.id}`}

@@ -1,20 +1,14 @@
-.card-review-wrapper article {
+.card-review-wrapper {
 	display: flex;
 	flex-direction: column;
-	padding: 0.75rem;
 }
 
-.card-review-wrapper .img-feature-review {
-	width: 100%;
+.img-feature-review {
+	height: calc((100vw - 32px - (var(--width-nav)) - (16px * 1)) / (1 * 1.8));
 }
 
-.card-review-wrapper .img-feature-review img {
-	border-radius: 0.75rem;
-	object-fit: cover;
-	opacity: 0.9;
-	transition: 0.3s ease-in-out;
-	width: 100%;
-	height: auto;
+.img-feature-review img {
+	height: 100%;
 }
 
 .card-review-wrapper .data-review-feature {
@@ -45,12 +39,23 @@
 /* ==>  Arrows */
 
 @media (min-width: 1200px) {
-	.card-review-wrapper article {
+	.card-review-wrapper {
 		flex-direction: row;
 	}
 
 	.img-feature-review {
+		width: 100%;
+		height: auto;
 		margin-right: 1rem;
+	}
+
+	.img-feature-review img {
+		border-radius: 0.75rem;
+		object-fit: cover;
+		opacity: 0.9;
+		transition: 0.3s ease-in-out;
+		width: 100%;
+		height: auto;
 	}
 
 	.data-review-feature {

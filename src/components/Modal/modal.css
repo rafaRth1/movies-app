@@ -23,6 +23,7 @@
 .modal-img {
 	opacity: 0.6;
 	transition: 0.3s ease-in-out all;
+	height: 250px;
 }
 
 .modal-img:hover {
