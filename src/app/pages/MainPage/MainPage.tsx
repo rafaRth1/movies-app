@@ -4,7 +4,6 @@ import { useAppDispatch, useAppSelector } from '../../../hooks';
 import { startMoviesNewShow } from '../../../store/movies';
 import {
 	PopularReads,
-	SliderFeatureCategory,
 	SliderFeatureReviews,
 	SliderForYou,
 	SliderLatestArticle,

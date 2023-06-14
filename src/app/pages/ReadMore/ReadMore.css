@@ -3,9 +3,19 @@
 	flex-direction: column-reverse;
 }
 
+@media (min-width: 1024px) {
+}
+
 @media (min-width: 1200px) {
 	.container-page-read-more {
 		flex-direction: row;
-		margin-top: 15px;
+	}
+
+	.container-page-read-more section {
+		width: 60%;
+	}
+
+	.container-page-read-more aside {
+		width: 40%;
 	}
 }

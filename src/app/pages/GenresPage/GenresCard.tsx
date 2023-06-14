@@ -18,6 +18,7 @@ export const GenresCard = ({ movie }: Props) => {
 					src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
 					className='rounded-3xl w-full cursor-pointer transition-all hover:opacity-80'
 					onClick={() => navigate(`/movie-information/${movie.id}`)}
+					style={{ height: '100%' }}
 					alt='Image Poster'
 				/>
 			</div>

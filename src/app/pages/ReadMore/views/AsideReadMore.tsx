@@ -7,7 +7,7 @@ interface Props {
 
 export const AsideReadMore = ({ movieReadMoreId }: Props) => {
 	return (
-		<aside className='xl:w-2/5 xl:ml-10'>
+		<aside>
 			<div className='p-5 sticky top-24'>
 				<span className='flex items-center text-black dark:text-white text-xs uppercase mb-5'>
 					<IoArrowRedoCircleOutline className='mr-1' />
@@ -37,7 +37,9 @@ export const AsideReadMore = ({ movieReadMoreId }: Props) => {
 									className='rounded-full w-10 mr-3 inline-block'
 								/>
 
-								<span className='font-medium text-black dark:text-white'>{production?.name}</span>
+								<span className='font-medium text-black dark:text-white cursor-pointer transition-colors hover:text-indigo-700 dark:hover:text-indigo-700'>
+									{production?.name}
+								</span>
 							</div>
 						))}
 				</div>

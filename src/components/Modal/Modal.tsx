@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks/useRedux';
 import { getContentModal, showModal } from '../../store';
 import { IoCloseSharp, IoMenuOutline } from 'react-icons/io5';
+import { LazyImage } from '../LazyImage/LazyImage';
 
 import './modal.css';
-import { ImageBox } from '../ImageBox/ImageBox';
 
 export const Modal = () => {
 	const dispatch = useAppDispatch();
@@ -34,12 +34,10 @@ export const Modal = () => {
 
 				<figure className='modal-img'>
 					{contentModal?.img ? (
-						<ImageBox
-							data-img={`https://image.tmdb.org/t/p/w500${contentModal?.img}`}
-							width='100%'
-							height='250px'
-							alt='image'
-							className='h-full px-3'
+						<LazyImage
+							placeholderSrc={`https://image.tmdb.org/t/p/w500_filter(blur)${contentModal?.img}`}
+							src={`https://image.tmdb.org/t/p/w500${contentModal?.img}`}
+							alt='Image Modal'
 						/>
 					) : null}
 				</figure>

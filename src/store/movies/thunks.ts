@@ -104,8 +104,6 @@ export const fetchResultSearch = (movie?: string): Appthunk => {
 
 export const fetchSearchMovieId = (id?: string): Appthunk => {
 	return async (dispatch) => {
-		dispatch(loadingStart());
-
 		try {
 			const movieReadMoreId = await clienteAxios(`/movie/${id}`);
 			dispatch(getMovieSearch(movieReadMoreId.data));

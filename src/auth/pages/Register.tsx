@@ -34,15 +34,7 @@ export const Register = () => {
 
 		try {
 			if (!Object.values(formState).includes('') && formData.password === formData.confirmPassword) {
-				const { data } = await movieAppApi.post(`${import.meta.env.VITE_API_URL}/auth/new-user`, {
-					firstname: formState.firstName,
-					lastname: formState.lastName,
-					username: formState.username,
-					email: formState.email,
-					password: formState.password,
-				});
-
-				console.log(data);
+				console.log('Registrado');
 			} else {
 				console.log('Falta Completar');
 			}

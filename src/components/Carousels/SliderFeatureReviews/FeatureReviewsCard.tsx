@@ -1,12 +1,15 @@
 import { SplideSlide } from '@splidejs/react-splide';
 import { MoviesTopRated } from '../../../store/movies/interfaces';
 import { LazyImage } from '../../LazyImage/LazyImage';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface Props {
 	movie: MoviesTopRated;
 }
 
 export const FeatureReviewsCard = ({ movie }: Props) => {
+	const navigate = useNavigate();
+
 	return (
 		<SplideSlide>
 			<div className='card-review-wrapper'>
@@ -16,12 +19,17 @@ export const FeatureReviewsCard = ({ movie }: Props) => {
 						placeholderSrc={`https://image.tmdb.org/t/p/w500_filter(blur)${movie.backdrop_path}`}
 						placeholderStyle={{ borderRadius: '10px' }}
 						src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-						style={{ borderRadius: '10px' }}
+						style={{ borderRadius: '10px', cursor: 'pointer' }}
+						onClick={() => navigate(`/read-more/${movie.id}`)}
 					/>
 				</div>
 
 				<div className='data-review-feature text-black dark:text-white w-full'>
-					<h3 className='text-xl font-medium mb-3'>{movie.title}</h3>
+					<Link
+						to={`/read-more/${movie.id}`}
+						className='text-xl font-medium mb-3'>
+						{movie.title}
+					</Link>
 					<span className='block text-sm mb-3'>{movie.release_date}</span>
 					<p className='text-justify'>{movie.overview}</p>
 				</div>
@@ -29,22 +37,3 @@ export const FeatureReviewsCard = ({ movie }: Props) => {
 		</SplideSlide>
 	);
 };
-
-{
-	/* <SplideSlide className='card-review-wrapper'>
-<article className='cursor-grab'>
-	<div className='img-feature-review relative'>
-		<LazyImage
-			placeholderSrc={`https://image.tmdb.org/t/p/w500_filter(blur)${movie.backdrop_path}`}
-			src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-		/>
-	</div>
-
-	<div className='data-review-feature text-black dark:text-white w-full'>
-		<h3 className='text-xl font-medium mb-3'>{movie.title}</h3>
-		<span className='block text-sm mb-3'>{movie.release_date}</span>
-		<p className='text-justify'>{movie.overview}</p>
-	</div>
-</article>
-</SplideSlide> */
-}

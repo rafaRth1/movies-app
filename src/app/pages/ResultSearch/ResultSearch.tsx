@@ -2,10 +2,9 @@ import { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { fetchResultSearch } from '../../../store';
 import { usePagination, useAppDispatch, useAppSelector } from '../../../hooks';
-import { Pagination, Spinner } from '../../../components';
+import { LazyImage, Pagination, Spinner } from '../../../components';
 import { MoviesResultSearch } from '../../../store/movies/interfaces';
-
-import ImageDefault from '../../../assets/imageDefault.png';
+import './ResultSearch.css';
 
 export const ResultSearch = () => {
 	const { moviesResultSearch, loading } = useAppSelector((state) => state.movie);
@@ -33,17 +32,19 @@ export const ResultSearch = () => {
 					{moviesPagination.map((movies: MoviesResultSearch) => (
 						<div
 							key={movies.id}
-							className='card-now-playing text-white p-3 basis-1/2 md:basis-1/3 xl:basis-1/6'>
-							<img
-								src={
-									!!movies.poster_path
-										? `https://image.tmdb.org/t/p/w500${movies.poster_path}`
-										: ImageDefault
-								}
-								alt='Image Poster'
-								className='rounded-3xl w-full cursor-pointer transition-all hover:opacity-80'
-								onClick={() => navigate(`/movie-information/${movies.id}`)}
-							/>
+							className='card-now-playing text-white p-2'>
+							<div className='card-now-playing-img relative'>
+								<LazyImage
+									placeholderSrc={`https://image.tmdb.org/t/p/w500_filter(blur)${movies.poster_path}`}
+									placeholderStyle={{ borderRadius: '10px', height: '100%' }}
+									src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
+									className='rounded-3xl w-full cursor-pointer transition-all hover:opacity-80 object-cover'
+									style={{ height: '100%' }}
+									alt='Image Poster'
+									onClick={() => navigate(`/movie-information/${movies.id}`)}
+								/>
+							</div>
+
 							<div className='my-3 p-2'>
 								<h6 className='text-black dark:text-white hover:text-indigo-700 dark:hover:text-indigo-700 font-medium mb-3 '>
 									<Link to={`/movie-archive/movie-information/${movies.id}`}>{movies.title}</Link>

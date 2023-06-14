@@ -3,12 +3,16 @@
 	flex-wrap: wrap;
 }
 
-.overview-wrapper picture {
+.img-movie-information {
+	height: 36vh;
+}
+
+.overview-wrapper .overview-img {
 	flex: 0 0 50%;
 	width: 50%;
 }
 
-.overview-wrapper picture img {
+.overview-wrapper .overview-img img {
 	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 1) !important;
 }
 
@@ -32,7 +36,7 @@
 	flex-direction: column;
 }
 
-.production-companie .card-companies picture {
+.production-companie .card-companies .overview-img {
 	width: 33.333333%;
 }
 
@@ -53,7 +57,7 @@
 	display: flex;
 }
 
-.post-related-link picture {
+.post-related-link .overview-img {
 	flex: 0 0 33.3333333%;
 	max-width: 33.3333333%;
 }
@@ -87,7 +91,7 @@
 		display: none;
 	}
 
-	.post-related-link picture {
+	.post-related-link .overview-img {
 		flex: 0 0 25%;
 		max-width: 25%;
 	}
@@ -112,12 +116,12 @@
 		display: flex;
 	}
 
-	.overview-wrapper picture {
+	.overview-wrapper .overview-img {
 		flex: 0 0 33.333333%;
 		width: 33.333333%;
 	}
 
-	.overview-wrapper picture img {
+	.overview-wrapper .overview-img img {
 		transform: translateY(-3.5rem);
 	}
 
@@ -131,7 +135,7 @@
 		width: 33.333333%;
 	}
 
-	.post-related-link picture {
+	.post-related-link .overview-img {
 		flex: 0 0 33.333333%;
 		max-width: 33.333333%;
 	}

@@ -1,17 +1,21 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchSearchMovieId } from '../../../store';
 import { useAppDispatch, useAppSelector } from '../../../hooks';
 import { AsideReadMore, FormReadMore, BodyReadMore } from './views';
-import { Spinner } from '../../../components';
+import { LazyImage, Spinner } from '../../../components';
 
-import ImageDefault from '../../../assets/ImageDefault_1280x720.png';
 import './ReadMore.css';
 
 export const ReadMore = () => {
+	const [isLoading, setIsLoading] = useState(true);
+	const { movieReadMoreId } = useAppSelector((state) => state.movie);
 	const { id } = useParams();
 	const dispatch = useAppDispatch();
-	const { movieReadMoreId, loading } = useAppSelector((state) => state.movie);
+
+	const onLoad = () => {
+		setIsLoading(false);
+	};
 
 	useEffect(() => {
 		dispatch(fetchSearchMovieId(id));
@@ -24,19 +28,22 @@ export const ReadMore = () => {
 	}, [id]);
 
 	return (
-		<div className='container-page-read-more bg-neutral-100 dark:bg-neutral-800 h-full px-5 transition-all'>
-			{!loading ? (
+		<div className='container-page-read-more bg-neutral-100 dark:bg-neutral-800 h-full p-5 transition-all'>
+			{Object.keys(movieReadMoreId).length !== 0 ? (
 				<>
-					<section className='xl:w-3/5 p-3'>
-						<img
-							src={
-								!!movieReadMoreId.backdrop_path
-									? `https://image.tmdb.org/t/p/w1280${movieReadMoreId.backdrop_path}`
-									: ImageDefault
-							}
-							alt='Image-Poster'
-							className='rounded-3xl'
-						/>
+					<section>
+						<div className='img-read-more relative'>
+							<img
+								src={`${
+									isLoading
+										? `https://image.tmdb.org/t/p/w1280_filter(blur)${movieReadMoreId.backdrop_path}`
+										: `https://image.tmdb.org/t/p/w1280${movieReadMoreId.backdrop_path}`
+								}`}
+								alt='Image Poster'
+								className='rounded-md'
+								onLoad={onLoad}
+							/>
+						</div>
 
 						<BodyReadMore movieReadMoreId={movieReadMoreId} />
 						<FormReadMore />

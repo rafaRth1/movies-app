@@ -1,65 +1,65 @@
-.card-movie-archive {
+.card-now-playing {
 	flex: 0 0 calc(100% / 2);
 	width: calc(100% / 2);
 }
 
-.card-movie-archive-img {
+.card-now-playing-img {
 	height: calc((100vw - 32px - var(--width-nav) - (8px * 2)) / (2 * 0.7));
 	min-height: 240px;
 }
 
 @media (min-width: 640px) {
-	.card-movie-archive {
+	.card-now-playing {
 		flex: 0 0 calc(100% / 2);
 		width: calc(100% / 2);
 	}
 
-	.card-movie-archive-img {
+	.card-now-playing-img {
 		height: calc((100vw - 32px - var(--width-nav) - (8px * 2)) / (2 * 0.7));
 	}
 }
 
 @media (min-width: 768px) {
-	.card-movie-archive {
+	.card-now-playing {
 		flex: 0 0 calc(100% / 3);
 		width: calc(100% / 3);
 	}
 
-	.card-movie-archive-img {
+	.card-now-playing-img {
 		height: calc((100vw - 32px - var(--width-nav) - (8px * 3)) / (3 * 0.7));
 	}
 }
 
 @media (min-width: 1024px) {
-	.card-movie-archive {
+	.card-now-playing {
 		flex: 0 0 calc(100% / 4);
 		width: calc(100% / 4);
 	}
 
-	.card-movie-archive-img {
+	.card-now-playing-img {
 		height: calc((100vw - 32px - var(--width-nav) - (8px * 4)) / (4 * 0.7));
 	}
 }
 
 @media (min-width: 1200px) {
-	.card-movie-archive {
+	.card-now-playing {
 		flex: 0 0 calc(100% / 5);
 		width: calc(100% / 5);
 	}
 
-	.card-movie-archive-img {
+	.card-now-playing-img {
 		height: calc((100vw - 32px - var(--width-nav) - (8px * 5)) / (5 * 0.7));
 	}
 }
 
 @media (min-width: 1500px) {
-	.card-movie-archive {
+	.card-now-playing {
 		flex: 0 0 calc(100% / 6);
 		width: calc(100% / 6);
 	}
 
-	.card-movie-archive-img {
-		height: calc((100vw - 32px - var(--width-nav) - (8px * 6)) / (6 * 0.7));
-		max-height: calc((1540px - 32px - var(--width-nav) - (8px * 2)) / (6 * 0.7));
+	.card-now-playing-img {
+		height: calc((100vw - 32px - var(--width-nav) - (8px * 6)) / (6 * 0.6));
+		max-height: calc((1540px - 32px - var(--width-nav) - (8px * 2)) / (6 * 0.6));
 	}
 }

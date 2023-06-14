@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { Spinner } from '../../../../../components';
+import { ImageLoad, LazyImage, Spinner } from '../../../../../components';
 import { useAppSelector } from '../../../../../hooks';
 import ImageDefault from '../../../../../assets/ImageDefault_1280x720.png';
 
@@ -7,7 +7,7 @@ import './BodyMovieInformation.css';
 
 export const BodyMovieInformation = () => {
 	const navigate = useNavigate();
-	const { movieInformation, loading } = useAppSelector((state) => state.movie);
+	const { movieInformation } = useAppSelector((state) => state.movie);
 
 	return (
 		<div className='movie-information px-3'>
@@ -16,25 +16,25 @@ export const BodyMovieInformation = () => {
 					<div className='overview-wrapper'>
 						<div className='overview-information-mobile mb-3'>
 							<h2 className='text-black dark:text-white text-4xl font-semibold inline-block mr-3'>
-								{movieInformation?.original_title}
+								{movieInformation.original_title}
 							</h2>
 
 							<span className='text-black dark:text-white text-sm inline'>
-								{!!movieInformation?.release_date && movieInformation?.release_date.slice(0, 4)}
+								{movieInformation.release_date.slice(0, 4)}
 							</span>
 
 							<div className='my-3'>
 								<div className='vote-average text-black dark:text-white border-4 inline-block px-2 py-1 rounded-xl'>
-									PG - {movieInformation?.vote_average}
+									PG - {movieInformation.vote_average}
 								</div>
 
 								<div className='duration-movie text-black dark:text-white px-2 py-1 inline'>
-									{movieInformation?.runtime}mins
+									{movieInformation.runtime}mins
 								</div>
 							</div>
 
 							<div className='gender flex'>
-								{movieInformation.genres?.map((genre) => (
+								{movieInformation.genres.map((genre) => (
 									<a
 										key={genre.id}
 										href='#'
@@ -46,40 +46,37 @@ export const BodyMovieInformation = () => {
 						</div>
 
 						<div className='overview'>
-							<picture className='px-3'>
-								{loading ? (
-									<Spinner />
-								) : (
-									<img
-										src={`https://image.tmdb.org/t/p/original${movieInformation?.poster_path}`}
-										alt='Image Poster'
-										className='rounded-2xl'
-									/>
-								)}
-							</picture>
+							<div className='overview-img px-3 relative'>
+								<ImageLoad
+									placeholderSrc={`https://image.tmdb.org/t/p/w500_filter(blur)${movieInformation?.poster_path}`}
+									src={`https://image.tmdb.org/t/p/w500${movieInformation?.poster_path}`}
+									className='rounded-2xl'
+									alt='Image Poster'
+								/>
+							</div>
 
 							<div className='overview-information px-3'>
 								<div className='title-general mb-3'>
 									<h2 className='text-black dark:text-white text-4xl font-semibold inline mr-3'>
-										{movieInformation?.original_title}
+										{movieInformation.original_title}
 									</h2>
 
 									<span className='text-black dark:text-white text-sm'>
-										{movieInformation.release_date?.slice(0, 4)}
+										{movieInformation.release_date.slice(0, 4)}
 									</span>
 
 									<div className='my-3'>
 										<div className='vote-average text-black dark:text-white border-4 inline-block px-2 py-1 rounded-xl'>
-											PG - {movieInformation?.vote_average}
+											PG - {movieInformation.vote_average}
 										</div>
 
 										<div className='duration-movie text-black dark:text-white px-2 py-1 inline'>
-											{movieInformation?.runtime}mins
+											{movieInformation.runtime}mins
 										</div>
 									</div>
 
 									<div className='gender flex'>
-										{movieInformation.genres?.map((genre) => (
+										{movieInformation.genres.map((genre) => (
 											<a
 												key={genre.id}
 												href='#'
@@ -91,7 +88,7 @@ export const BodyMovieInformation = () => {
 								</div>
 
 								<p className='text-black dark:text-white text-justify text-lg'>
-									{movieInformation?.overview}
+									{movieInformation.overview}
 								</p>
 							</div>
 						</div>
@@ -103,7 +100,7 @@ export const BodyMovieInformation = () => {
 						</h5>
 
 						<div className='production-companie-wrapper'>
-							{movieInformation.production_companies?.map((companie) => (
+							{movieInformation.production_companies.map((companie) => (
 								<div
 									className='card-companies items-center p-2'
 									key={companie.id}>
@@ -163,7 +160,7 @@ export const BodyMovieInformation = () => {
 							<div className='flex-1'>
 								<h6 className='text-black dark:text-white text-sm mt-3 block'>News</h6>
 								<Link
-									to={`/read-more/${movieInformation?.id}`}
+									to={`/read-more/${movieInformation.id}`}
 									className='text-black dark:text-white font-medium text-xl my-3 block cursor-pointer'>
 									The Before Sunrise Experience
 								</Link>

@@ -1,4 +1,3 @@
-export * from './ImageBox/ImageBox';
 export * from './Carousel/Carousel';
 export * from './Formulary/TextInput/TextInput';
 export * from './Message/Message';
@@ -9,3 +8,4 @@ export * from './Spinner/Spinner';
 export * from './AverageComponent/AverageComponent';
 export * from './Arrows/Arrows';
 export * from './LazyImage/LazyImage';
+export * from './ImageLoad/ImageLoad';

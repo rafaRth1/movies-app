@@ -24,12 +24,7 @@ export const Login = () => {
 
 		try {
 			if (!Object.values(formState).includes('')) {
-				const { data } = await movieAppApi.post(`${import.meta.env.VITE_API_URL}/auth`, {
-					username: formState.username,
-					password: formState.password,
-				});
-
-				console.log(data);
+				console.log('Logueado');
 			} else {
 				console.log('Falta Completar');
 			}
