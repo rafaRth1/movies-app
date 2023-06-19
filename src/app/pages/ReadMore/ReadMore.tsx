@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { fetchSearchMovieId } from '../../../store';
 import { useAppDispatch, useAppSelector } from '../../../hooks';
 import { AsideReadMore, FormReadMore, BodyReadMore } from './views';
-import { LazyImage, Spinner } from '../../../components';
+import { Spinner } from '../../../components';
 
 import './ReadMore.css';
 

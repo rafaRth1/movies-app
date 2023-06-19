@@ -27,10 +27,10 @@ export const Header = () => {
 	};
 
 	return (
-		<div className='content-header-full sticky top-0 h-22 w-full z-30'>
+		<div className='container-header-full sticky top-0 h-22 w-full z-30'>
 			<header className='h-22 w-full bg-neutral-200 dark:bg-neutral-900 transition-all py-3 px-5 flex justify-between items-center'>
 				<div
-					className='logo text-black dark:text-white font-["Rubik"] text-3xl uppercase font-bold cursor-pointer p-1'
+					className='logo text-black dark:text-white text-3xl uppercase font-bold cursor-pointer p-1'
 					onClick={() => navigate('/')}>
 					<Link to='/'>
 						<img

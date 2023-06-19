@@ -7,3 +7,4 @@ export * from './MovieInformation';
 export * from './MoviesResultSearch';
 export * from './MoviesGenreType';
 export * from './InterfaceAllCategory';
+export * from './InterfaceVideoMovie';

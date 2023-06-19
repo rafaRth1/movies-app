@@ -13,6 +13,8 @@ export const CategoriesPage = () => {
 		dispatch(fetchAllCategories());
 	}, []);
 
+	console.log(arrayAllCategories);
+
 	return (
 		<div className='contanier-page-categories p-4'>
 			<h1 className='text-black dark:text-white block m-3 text-3xl font-semibold'>All Categories</h1>

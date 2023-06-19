@@ -1,5 +1,6 @@
 import {
 	InterfaceAllCategory,
+	InterfaceVideoMovie,
 	MovieInformation,
 	MovieReadMoreId,
 	MoviesGenreType,
@@ -9,6 +10,7 @@ import {
 	MoviesTopRated,
 	MoviesUpComing,
 } from './interfaces';
+import { RecommendMovie } from './interfaces/RecommendMovie';
 
 export interface Movies {
 	loading: boolean;
@@ -20,6 +22,8 @@ export interface Movies {
 	moviesResultSearch: MoviesResultSearch[];
 	moviesGenreType: MoviesGenreType[];
 	arrayAllCategories: InterfaceAllCategory[];
+	arrayMovieVideos: InterfaceVideoMovie[];
+	arrayMoviesRecommend: RecommendMovie[];
 	movieReadMoreId: MovieReadMoreId;
 	genres: [];
 	error: boolean;

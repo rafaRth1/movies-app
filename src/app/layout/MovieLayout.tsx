@@ -7,14 +7,14 @@ import './MovieLayout.css';
 
 export const MovieLayout = () => {
 	return (
-		<div className='relative'>
+		<div className='container-main'>
 			<Header />
 
-			<div className='container-main w-full h-full relative'>
+			<div className='content-main w-full h-full'>
 				<Navigation />
 
-				<main className='main-page w-full'>
-					<div className='page-content w-full h-full'>
+				<main className='page-main w-full'>
+					<div className='page-main-content'>
 						<Suspense fallback={<Spinner className='h-40' />}>
 							<Outlet />
 						</Suspense>

@@ -9,3 +9,4 @@ export * from './AverageComponent/AverageComponent';
 export * from './Arrows/Arrows';
 export * from './LazyImage/LazyImage';
 export * from './ImageLoad/ImageLoad';
+export * from './SubMenuNav/SubMenuNav';

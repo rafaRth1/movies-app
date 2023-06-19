@@ -1,19 +1,25 @@
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ImageLoad, LazyImage, Spinner } from '../../../../../components';
+import { ImageLoad, LazyImage } from '../../../../../components';
 import { useAppSelector } from '../../../../../hooks';
-import ImageDefault from '../../../../../assets/ImageDefault_1280x720.png';
 
 import './BodyMovieInformation.css';
+import { ModalVideo } from '../../../../../components/ModalVideo/ModalVideo';
 
 export const BodyMovieInformation = () => {
+	const [showModal, setShowModal] = useState(false);
+	const { movieInformation, arrayMovieVideos, arrayMoviesRecommend } = useAppSelector(
+		(state) => state.movie
+	);
 	const navigate = useNavigate();
-	const { movieInformation } = useAppSelector((state) => state.movie);
+
+	const filterVideoTrailer = arrayMovieVideos.filter((video) => video.type === 'Trailer');
 
 	return (
-		<div className='movie-information px-3'>
+		<div className='body-movie-information px-3'>
 			<div className='movie-information-wrapper p-4'>
-				<div className='movie-information-main px-3'>
-					<div className='overview-wrapper'>
+				<section className='px-3'>
+					<div className='descrition-movie'>
 						<div className='overview-information-mobile mb-3'>
 							<h2 className='text-black dark:text-white text-4xl font-semibold inline-block mr-3'>
 								{movieInformation.original_title}
@@ -29,7 +35,7 @@ export const BodyMovieInformation = () => {
 								</div>
 
 								<div className='duration-movie text-black dark:text-white px-2 py-1 inline'>
-									{movieInformation.runtime}mins
+									{movieInformation.runtime} min
 								</div>
 							</div>
 
@@ -71,7 +77,7 @@ export const BodyMovieInformation = () => {
 										</div>
 
 										<div className='duration-movie text-black dark:text-white px-2 py-1 inline'>
-											{movieInformation.runtime}mins
+											{movieInformation.runtime} min
 										</div>
 									</div>
 
@@ -104,7 +110,7 @@ export const BodyMovieInformation = () => {
 								<div
 									className='card-companies items-center p-2'
 									key={companie.id}>
-									<picture>
+									<div className='img-companie'>
 										<img
 											src={
 												!!companie.logo_path
@@ -114,7 +120,7 @@ export const BodyMovieInformation = () => {
 											alt='Logo Companie'
 											className='rounded-lg cursor-pointer'
 										/>
-									</picture>
+									</div>
 
 									<span className='text-black dark:text-white dark:hover:text-indigo-700 ml-4 flex-1 cursor-pointer'>
 										{companie.name}
@@ -123,11 +129,13 @@ export const BodyMovieInformation = () => {
 							))}
 						</div>
 					</div>
-				</div>
+				</section>
 
-				<div className='movie-information-aside px-3'>
+				<aside className='px-3'>
 					<div className='play-trailer w-full'>
-						<button className='text-white text-xl bg-indigo-800 hover:bg-indigo-900 transition-all px-4 py-3 w-full my-2 rounded-2xl'>
+						<button
+							className='text-white text-xl bg-indigo-800 hover:bg-indigo-900 transition-all px-4 py-3 w-full my-2 rounded-2xl'
+							onClick={() => setShowModal(true)}>
 							Play Trailer
 						</button>
 
@@ -137,38 +145,48 @@ export const BodyMovieInformation = () => {
 							See All Movie
 						</button>
 					</div>
-
-					<div className='post-related'>
-						<h5 className='text-black dark:text-white text-xl font-semibold my-5'>
-							Post Related to this movie
-						</h5>
-
-						<div className='post-related-link'>
-							<picture className='mr-4'>
-								<img
-									src={
-										!!movieInformation?.backdrop_path
-											? `https://image.tmdb.org/t/p/w780${movieInformation?.backdrop_path}`
-											: ImageDefault
-									}
-									alt='Image BackDrop'
-									className='w-full h-full object-cover rounded-2xl cursor-pointer hover:opacity-80 transition-all'
-									onClick={() => navigate(`/read-more/${movieInformation?.id}`)}
-								/>
-							</picture>
-
-							<div className='flex-1'>
-								<h6 className='text-black dark:text-white text-sm mt-3 block'>News</h6>
-								<Link
-									to={`/read-more/${movieInformation.id}`}
-									className='text-black dark:text-white font-medium text-xl my-3 block cursor-pointer'>
-									The Before Sunrise Experience
-								</Link>
-							</div>
-						</div>
-					</div>
-				</div>
+				</aside>
 			</div>
+
+			{arrayMoviesRecommend.length === 0 ? null : (
+				<div className='movie-recommend'>
+					<h5 className='text-black dark:text-white text-xl font-semibold my-5'>
+						Post Related to this movie
+					</h5>
+
+					<ul className='movie-recommend-content flex flex-wrap'>
+						{arrayMoviesRecommend.slice(0, 6).map((movies) => (
+							<li
+								key={movies.id}
+								className='flex flex-col px-2'>
+								<div className='img-movie-recommend relative h-full'>
+									<LazyImage
+										placeholderSrc={`https://image.tmdb.org/t/p/w500_filter(blur)${movies?.poster_path}`}
+										placeholderStyle={{ borderRadius: '10px', height: '100%' }}
+										src={`https://image.tmdb.org/t/p/w500${movies?.poster_path}`}
+										className='w-full h-full object-cover rounded-2xl cursor-pointer hover:opacity-80 transition-all'
+										alt='Image BackDrop'
+										onClick={() => navigate(`/read-more/${movies?.id}`)}
+									/>
+								</div>
+
+								<div className='flex-1'>
+									<Link
+										to={`/read-more/${movieInformation.id}`}
+										className='text-black dark:text-white font-medium text-xl my-3 block cursor-pointer'>
+										The Before Sunrise Experience
+									</Link>
+								</div>
+							</li>
+						))}
+					</ul>
+				</div>
+			)}
+
+			{/* <ModalVideo
+				showModal={showModal}
+				setShowModal={setShowModal}
+			/> */}
 		</div>
 	);
 };

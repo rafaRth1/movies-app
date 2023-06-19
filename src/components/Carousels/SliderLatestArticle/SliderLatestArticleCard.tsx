@@ -29,6 +29,7 @@ export const SliderLatestArticleCard = ({ movie }: Props) => {
 				src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
 				style={{ borderRadius: '20px', padding: '10px' }}
 				className='w-full h-full object-cover cursor-pointer'
+				alt={`Image ${movie.title}`}
 				onClick={() =>
 					handleShowModal({
 						id: movie.id,

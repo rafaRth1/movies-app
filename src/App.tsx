@@ -5,10 +5,10 @@ import '@splidejs/react-splide/css';
 
 function App() {
 	return (
-		<div className='App min-h-screen relative'>
+		<div className='app'>
+			<AppRouter />
 			<Modal />
 			<ModalSearch />
-			<AppRouter />
 		</div>
 	);
 }

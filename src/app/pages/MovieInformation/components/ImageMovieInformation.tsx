@@ -1,4 +1,3 @@
-import { LazyImage } from '../../../../components';
 import { useAppSelector } from '../../../../hooks';
 
 export const ImageMovieInformation = () => {

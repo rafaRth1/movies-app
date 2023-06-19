@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AverageComponent, LazyImage } from '../../../components';
 import { genresData } from '../../../data/genres';
 import { MoviesTopRated } from '../../../store/movies/interfaces';
@@ -18,6 +18,7 @@ export const ReviewsCard = ({ movie }: Props) => {
 					placeholderSrc={`https://image.tmdb.org/t/p/w500_filter(blur)${movie.backdrop_path}`}
 					src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
 					className='rounded-2xl hover:opacity-90 transition-all cursor-pointer w-full h-full object-cover'
+					alt={`Image ${movie.title}`}
 					onClick={() => navigate(`/read-more/${movie.id}`)}
 				/>
 
@@ -44,11 +45,13 @@ export const ReviewsCard = ({ movie }: Props) => {
 				<div className='genres my-4'>
 					{genresData.map((gender) =>
 						movie.genre_ids.includes(gender.id) ? (
-							<p
+							<Link
 								key={gender.id}
+								to={`/genres/${gender.id}`}
+								state={{ name: gender.name }}
 								className='text-white text-sm mr-2 mb-2 p-2 bg-indigo-700 rounded-2xl inline hover:bg-indigo-800 transition-all cursor-pointer'>
 								{gender.name}
-							</p>
+							</Link>
 						) : null
 					)}
 				</div>
@@ -56,3 +59,5 @@ export const ReviewsCard = ({ movie }: Props) => {
 		</div>
 	);
 };
+
+// onClick={() => navigate(`/genres/${gender.id}`)}

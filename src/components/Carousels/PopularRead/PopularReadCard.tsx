@@ -19,6 +19,7 @@ export const PopularReadCard = ({ movie }: Props) => {
 					placeholderStyle={{ left: '0px', paddingInline: '14px', borderRadius: '5px' }}
 					src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
 					style={{ borderRadius: '5px', objectFit: 'cover', cursor: 'pointer' }}
+					alt={`Image ${movie.title}`}
 					onClick={() => navigate(`/read-more/${movie.id}`)}
 				/>
 			</div>

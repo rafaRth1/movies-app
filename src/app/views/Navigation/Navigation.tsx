@@ -12,7 +12,7 @@ export const Navigation = () => {
 	const { themeDark, activeNavigation } = useAppSelector((state) => state.movie);
 	const { pathname } = useLocation();
 	const dispatch = useAppDispatch();
-	const listClassLI = `font-["Rubik"] rounded-2xl block`;
+	const listClassLI = `rounded-2xl block`;
 
 	return (
 		<nav
@@ -27,38 +27,36 @@ export const Navigation = () => {
 			/>
 
 			<div className='navigate-content'>
-				<div className='text-black dark:text-white p-3'>
-					<ul>
-						{routes.map(({ to, name, subPath }) =>
-							subPath ? (
-								<li
-									key={to}
-									className={`${
-										pathname === `/${to}` ? 'bg-neutral-200 dark:bg-neutral-700' : ''
-									} hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-2xl px-3 py-4 mb-1 relative menu-${to}`}>
-									<span className={listClassLI}>{name}</span>
+				<ul className='text-black dark:text-white p-3'>
+					{routes.map(({ to, name, subPath }) =>
+						subPath ? (
+							<li
+								key={to}
+								className={`${
+									pathname === `/${to}` ? 'bg-neutral-200 dark:bg-neutral-700' : ''
+								} hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-2xl px-3 py-4 mb-1 relative menu-${to}`}>
+								<span className={listClassLI}>{name}</span>
 
-									<SubMenuNav
-										to={to}
-										data={genresData}
-									/>
-								</li>
-							) : (
-								<li
-									key={to}
-									className={`${
-										pathname === `/${to}` ? 'bg-neutral-300 dark:bg-neutral-700' : ''
-									} hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-2xl px-3 py-4 mb-1`}>
-									<NavLink
-										to={to}
-										className={listClassLI}>
-										{name}
-									</NavLink>
-								</li>
-							)
-						)}
-					</ul>
-				</div>
+								<SubMenuNav
+									to={to}
+									data={genresData}
+								/>
+							</li>
+						) : (
+							<li
+								key={to}
+								className={`${
+									pathname === `/${to}` ? 'bg-neutral-300 dark:bg-neutral-700' : ''
+								} hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-2xl px-3 py-4 mb-1`}>
+								<NavLink
+									to={to}
+									className={listClassLI}>
+									{name}
+								</NavLink>
+							</li>
+						)
+					)}
+				</ul>
 			</div>
 		</nav>
 	);

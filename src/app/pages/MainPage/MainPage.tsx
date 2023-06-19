@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../hooks';
-import { startMoviesNewShow } from '../../../store/movies';
+import { handleResetStateMovieInformation, startMoviesNewShow } from '../../../store/movies';
+import { Spinner } from '../../../components';
 import {
 	PopularReads,
 	SliderFeatureReviews,
@@ -11,7 +12,6 @@ import {
 } from '../../../components/Carousels';
 
 import './MainPage.css';
-import { Spinner } from '../../../components';
 
 export const MainPage = () => {
 	const dispatch = useAppDispatch();
@@ -21,6 +21,7 @@ export const MainPage = () => {
 		const cancelToken = axios.CancelToken.source();
 
 		dispatch(startMoviesNewShow(cancelToken));
+		dispatch(handleResetStateMovieInformation({}));
 
 		return () => {
 			cancelToken.cancel();
@@ -35,13 +36,13 @@ export const MainPage = () => {
 				<>
 					<SliderForYou />
 
-					<section className='slides'>
-						<div className='slides-content'>
+					<section className='container-slider-grid'>
+						<div className='slider-grid-column-one'>
 							<SliderLatestArticle />
 							<SliderFeatureReviews />
 						</div>
 
-						<div className='content-popular-read'>
+						<div className='slider-grid-column-two'>
 							<PopularReads />
 						</div>
 					</section>

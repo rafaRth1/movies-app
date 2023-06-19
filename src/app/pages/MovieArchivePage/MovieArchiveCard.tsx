@@ -14,11 +14,11 @@ export const MovieArchiveCard = ({ movie }: Props) => {
 			<div className='card-movie-archive-img relative'>
 				<LazyImage
 					placeholderSrc={`https://image.tmdb.org/t/p/w500_filter(blur)${movie.poster_path}`}
-					placeholderStyle={{ borderRadius: '24px', height: '100%' }}
+					placeholderStyle={{ borderRadius: '10px', height: '100%' }}
 					src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-					className='rounded-3xl w-full cursor-pointer transition-all hover:opacity-80 h-full object-cover'
-					onClick={() => navigate(`/movie-information/${movie.id}`)}
+					className='rounded-lg w-full cursor-pointer transition-all hover:opacity-80 h-full object-cover'
 					alt='Image Poster'
+					onClick={() => navigate(`/movie-information/${movie.id}`)}
 				/>
 
 				<AverageComponent average={movie.vote_average} />

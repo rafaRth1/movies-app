@@ -20,6 +20,7 @@ export const FeatureReviewsCard = ({ movie }: Props) => {
 						placeholderStyle={{ borderRadius: '10px' }}
 						src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
 						style={{ borderRadius: '10px', cursor: 'pointer' }}
+						alt={`Image ${movie.title}`}
 						onClick={() => navigate(`/read-more/${movie.id}`)}
 					/>
 				</div>

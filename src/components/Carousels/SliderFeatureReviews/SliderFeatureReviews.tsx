@@ -1,9 +1,9 @@
 import { Options, Splide, SplideTrack } from '@splidejs/react-splide';
 import { useAppSelector } from '../../../hooks';
 import { Arrows } from '../../Arrows/Arrows';
+import { FeatureReviewsCard } from './FeatureReviewsCard';
 
 import './sliderFeatureReviews.css';
-import { FeatureReviewsCard } from './FeatureReviewsCard';
 
 const option: Options = {
 	gap: '1rem',

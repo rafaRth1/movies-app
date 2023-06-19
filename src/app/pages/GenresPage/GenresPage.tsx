@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../hooks';
-import { fetchMoviesGenreType } from '../../../store';
+import { fetchMoviesGenreType, handleResetStateMovieInformation } from '../../../store';
 import { Spinner } from '../../../components';
 import { GenresCard } from './GenresCard';
 
@@ -15,6 +15,7 @@ export const PageGenres = () => {
 
 	useEffect(() => {
 		dispatch(fetchMoviesGenreType(id));
+		dispatch(handleResetStateMovieInformation({}));
 	}, [id]);
 
 	return (

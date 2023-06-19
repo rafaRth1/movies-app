@@ -21,6 +21,7 @@ export const SliderNewMoviesCard = ({ movie }: Props) => {
 						placeholderStyle={{ height: '100%' }}
 						src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
 						style={{ height: '100%' }}
+						alt={`Image ${movie.title}`}
 					/>
 
 					<AverageComponent average={movie.vote_average} />

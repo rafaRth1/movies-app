@@ -80,6 +80,10 @@ export const movieSlice = createSlice({
 			state.movieInformation = action.payload;
 		},
 
+		handleResetStateMovieInformation: (state: Movies, action: any) => {
+			state.movieInformation = action.payload;
+		},
+
 		getAllCategories: (state: Movies, action: any) => {
 			state.loading = false;
 			state.arrayAllCategories = action.payload;
@@ -87,6 +91,14 @@ export const movieSlice = createSlice({
 
 		saveValueSearch: (state: Movies, action: any) => {
 			state.valueSearch = action.payload;
+		},
+
+		getVideosMovie: (state: Movies, action: any) => {
+			state.arrayMovieVideos = action.payload;
+		},
+
+		getMoviesRecommend: (state: Movies, action: any) => {
+			state.arrayMoviesRecommend = action.payload;
 		},
 	},
 });
@@ -104,6 +116,7 @@ export const {
 	getMoviesUpcoming,
 	getMoviesTopRated,
 	getMovieInformation,
+	handleResetStateMovieInformation,
 	getGenders,
 	getMoviesNowPlaying,
 	getResultSearch,
@@ -111,4 +124,6 @@ export const {
 	saveValueSearch,
 	getMoviesGenreType,
 	getAllCategories,
+	getVideosMovie,
+	getMoviesRecommend,
 } = movieSlice.actions;

@@ -9,9 +9,11 @@ import {
 	getMoviesGenreType,
 	getMoviesNowPlaying,
 	getMoviesPopular,
+	getMoviesRecommend,
 	getMoviesTopRated,
 	getMoviesUpcoming,
 	getResultSearch,
+	getVideosMovie,
 	loadingFinish,
 	loadingStart,
 	showMoviesError,
@@ -97,7 +99,7 @@ export const fetchResultSearch = (movie?: string): Appthunk => {
 			);
 			dispatch(getResultSearch(moviesSearchResult.data.results));
 		} catch (error) {
-			dispatch(showMoviesError);
+			dispatch(showMoviesError());
 		}
 	};
 };
@@ -108,7 +110,7 @@ export const fetchSearchMovieId = (id?: string): Appthunk => {
 			const movieReadMoreId = await clienteAxios(`/movie/${id}`);
 			dispatch(getMovieSearch(movieReadMoreId.data));
 		} catch (error) {
-			dispatch(showMoviesError);
+			dispatch(showMoviesError());
 		}
 	};
 };
@@ -121,7 +123,18 @@ export const fetchMovieInformation = (id?: string): Appthunk => {
 			const movieInformationId = await clienteAxios(`/movie/${id}`);
 			dispatch(getMovieInformation(movieInformationId.data));
 		} catch (error) {
-			dispatch(showMoviesError);
+			dispatch(showMoviesError());
+		}
+	};
+};
+
+export const fetchMovieVideo = (id?: string): Appthunk => {
+	return async (dispatch) => {
+		try {
+			const responseMovieVideo = await clienteAxios(`/movie/${id}/videos`);
+			dispatch(getVideosMovie(responseMovieVideo.data.results));
+		} catch (error) {
+			dispatch(showMoviesError());
 		}
 	};
 };
@@ -134,7 +147,7 @@ export const fetchMoviesGenreType = (id?: string): Appthunk => {
 			const genreMoviesType = await clienteAxios(`/discover/movie?with_genres=${id}`);
 			dispatch(getMoviesGenreType(genreMoviesType.data.results));
 		} catch (error) {
-			dispatch(showMoviesError);
+			dispatch(showMoviesError());
 		}
 	};
 };
@@ -147,7 +160,18 @@ export const fetchAllCategories = (): Appthunk => {
 			const arrayAllCategories = await clienteAxios(`/watch/providers/movie?watch_region=PE`);
 			dispatch(getAllCategories(arrayAllCategories.data.results));
 		} catch (error) {
-			dispatch(showMoviesError);
+			dispatch(showMoviesError());
+		}
+	};
+};
+
+export const fetchRecomendMovies = (id?: string): Appthunk => {
+	return async (dispatch) => {
+		try {
+			const response = await clienteAxios(`/movie/${id}/recommendations`);
+			dispatch(getMoviesRecommend(response.data.results));
+		} catch (error) {
+			dispatch(showMoviesError());
 		}
 	};
 };

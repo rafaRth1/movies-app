@@ -1,15 +1,15 @@
-.container-main {
+.content-main {
 	display: flex;
 	flex-direction: column;
 }
 
-.main-page {
+.page-main {
 	max-width: 1540px;
 	margin: 0 auto;
 }
 
 @media (min-width: 990px) {
-	.container-main {
+	.content-main {
 		flex-direction: row;
 	}
 }

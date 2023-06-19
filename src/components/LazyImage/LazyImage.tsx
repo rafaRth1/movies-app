@@ -90,7 +90,7 @@ export const LazyImage = ({
 				className={className}
 				alt={alt}
 				onLoad={onLoad}
-				style={isLoading ? { display: 'none' } : { ...style }}
+				style={isLoading ? { display: 'none' } : style}
 				{...props}
 			/>
 		</>

@@ -10,6 +10,8 @@ export const initialState: Movies = {
 	genres: [],
 	moviesGenreType: [],
 	arrayAllCategories: [],
+	arrayMovieVideos: [],
+	arrayMoviesRecommend: [],
 	movieInformation: {} as MovieInformation,
 	movieReadMoreId: {} as MovieReadMoreId,
 	contentModal: {} as ContentModal,

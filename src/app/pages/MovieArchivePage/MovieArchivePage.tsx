@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { fetchNowPlaying } from '../../../store';
+import { fetchNowPlaying, handleResetStateMovieInformation } from '../../../store';
 import { usePagination, useAppDispatch, useAppSelector } from '../../../hooks';
 import { Pagination, Spinner } from '../../../components';
 import { MovieArchiveCard } from './MovieArchiveCard';
@@ -15,6 +15,7 @@ export const MovieArchivePage = () => {
 
 	useEffect(() => {
 		dispatch(fetchNowPlaying());
+		dispatch(handleResetStateMovieInformation({}));
 	}, []);
 
 	return (
