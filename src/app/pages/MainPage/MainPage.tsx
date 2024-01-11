@@ -1,15 +1,15 @@
 import axios from 'axios';
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../hooks';
-import { handleResetStateMovieInformation, startMoviesNewShow } from '../../../store/movies';
-import { Spinner } from '../../../components';
+import { useAppDispatch, useAppSelector } from '@/hooks/';
+import { handleResetStateMovieInformation, startMoviesNewShow } from '@/store/movies';
+import { Spinner } from '@/components';
 import {
 	PopularReads,
 	SliderFeatureReviews,
 	SliderForYou,
 	SliderLatestArticle,
 	SliderNewMovies,
-} from '../../../components/Carousels';
+} from '@/components/Carousels';
 
 import './MainPage.css';
 

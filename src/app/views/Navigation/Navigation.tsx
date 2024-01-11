@@ -12,7 +12,7 @@ export const Navigation = () => {
 	const { themeDark, activeNavigation } = useAppSelector((state) => state.movie);
 	const { pathname } = useLocation();
 	const dispatch = useAppDispatch();
-	const listClassLI = `rounded-2xl block`;
+	const listClassLI = `rounded-2xl block text-lg`;
 
 	return (
 		<nav
