@@ -1,16 +1,14 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ImageLoad, LazyImage } from '../../../../../components';
-import { useAppSelector } from '../../../../../hooks';
+import { ImageLoad, LazyImage } from '@/components';
+import { useAppSelector } from '@/hooks';
+import { ModalVideo } from '@/components/ModalVideo/ModalVideo';
 
 import './BodyMovieInformation.css';
-import { ModalVideo } from '../../../../../components/ModalVideo/ModalVideo';
 
 export const BodyMovieInformation = () => {
 	const [showModal, setShowModal] = useState(false);
-	const { movieInformation, arrayMovieVideos, arrayMoviesRecommend } = useAppSelector(
-		(state) => state.movie
-	);
+	const { movieInformation, arrayMovieVideos, arrayMoviesRecommend } = useAppSelector((state) => state.movie);
 	const navigate = useNavigate();
 
 	const filterVideoTrailer = arrayMovieVideos.filter((video) => video.type === 'Trailer');
@@ -21,20 +19,18 @@ export const BodyMovieInformation = () => {
 				<section className='px-3'>
 					<div className='descrition-movie'>
 						<div className='overview-information-mobile mb-3'>
-							<h2 className='text-black dark:text-white text-4xl font-semibold inline-block mr-3'>
+							<h2 className='text-white text-4xl font-semibold inline-block mr-3'>
 								{movieInformation.original_title}
 							</h2>
 
-							<span className='text-black dark:text-white text-sm inline'>
-								{movieInformation.release_date.slice(0, 4)}
-							</span>
+							<span className='text-white text-sm inline'>{movieInformation.release_date.slice(0, 4)}</span>
 
 							<div className='my-3'>
-								<div className='vote-average text-black dark:text-white border-4 inline-block px-2 py-1 rounded-xl'>
+								<div className='vote-average text-white border-4 inline-block px-2 py-1 rounded-xl'>
 									PG - {movieInformation.vote_average}
 								</div>
 
-								<div className='duration-movie text-black dark:text-white px-2 py-1 inline'>
+								<div className='duration-movie text-white px-2 py-1 inline'>
 									{movieInformation.runtime} min
 								</div>
 							</div>
@@ -63,20 +59,18 @@ export const BodyMovieInformation = () => {
 
 							<div className='overview-information px-3'>
 								<div className='title-general mb-3'>
-									<h2 className='text-black dark:text-white text-4xl font-semibold inline mr-3'>
+									<h2 className='text-white text-4xl font-semibold inline mr-3'>
 										{movieInformation.original_title}
 									</h2>
 
-									<span className='text-black dark:text-white text-sm'>
-										{movieInformation.release_date.slice(0, 4)}
-									</span>
+									<span className='text-white text-sm'>{movieInformation.release_date.slice(0, 4)}</span>
 
 									<div className='my-3'>
-										<div className='vote-average text-black dark:text-white border-4 inline-block px-2 py-1 rounded-xl'>
+										<div className='vote-average text-white border-4 inline-block px-2 py-1 rounded-xl'>
 											PG - {movieInformation.vote_average}
 										</div>
 
-										<div className='duration-movie text-black dark:text-white px-2 py-1 inline'>
+										<div className='duration-movie text-white px-2 py-1 inline'>
 											{movieInformation.runtime} min
 										</div>
 									</div>
@@ -93,17 +87,13 @@ export const BodyMovieInformation = () => {
 									</div>
 								</div>
 
-								<p className='text-black dark:text-white text-justify text-lg'>
-									{movieInformation.overview}
-								</p>
+								<p className='text-white text-justify text-lg'>{movieInformation.overview}</p>
 							</div>
 						</div>
 					</div>
 
 					<div className='production-companie w-full'>
-						<h5 className='text-black dark:text-white font-semibold text-2xl my-4'>
-							Productions Companies
-						</h5>
+						<h5 className='text-white font-semibold text-2xl my-4'>Productions Companies</h5>
 
 						<div className='production-companie-wrapper'>
 							{movieInformation.production_companies.map((companie) => (
@@ -122,7 +112,7 @@ export const BodyMovieInformation = () => {
 										/>
 									</div>
 
-									<span className='text-black dark:text-white dark:hover:text-indigo-700 ml-4 flex-1 cursor-pointer'>
+									<span className='text-white dark:hover:text-indigo-700 ml-4 flex-1 cursor-pointer'>
 										{companie.name}
 									</span>
 								</div>
@@ -134,13 +124,13 @@ export const BodyMovieInformation = () => {
 				<aside className='px-3'>
 					<div className='play-trailer w-full'>
 						<button
-							className='text-white text-xl bg-indigo-800 hover:bg-indigo-900 transition-all px-4 py-3 w-full my-2 rounded-2xl'
+							className='text-white text-xl bg-gradient-to-r from-[#3754ea] to-[#881cf8] px-4 py-3 w-full my-2 rounded-2xl'
 							onClick={() => setShowModal(true)}>
 							Play Trailer
 						</button>
 
 						<button
-							className='text-white text-xl bg-indigo-800 hover:bg-indigo-900 transition-all px-4 py-3 w-full my-2 rounded-2xl'
+							className='text-white text-xl bg-gradient-to-r from-[#3754ea] to-[#881cf8] px-4 py-3 w-full my-2 rounded-2xl'
 							onClick={() => navigate(-1)}>
 							See All Movie
 						</button>
@@ -150,9 +140,7 @@ export const BodyMovieInformation = () => {
 
 			{arrayMoviesRecommend.length === 0 ? null : (
 				<div className='movie-recommend'>
-					<h5 className='text-black dark:text-white text-xl font-semibold my-5'>
-						Post Related to this movie
-					</h5>
+					<h5 className='text-white text-xl font-semibold my-5'>Post Related to this movie</h5>
 
 					<ul className='movie-recommend-content flex flex-wrap'>
 						{arrayMoviesRecommend.slice(0, 6).map((movies) => (
@@ -173,7 +161,7 @@ export const BodyMovieInformation = () => {
 								<div className='flex-1'>
 									<Link
 										to={`/read-more/${movieInformation.id}`}
-										className='text-black dark:text-white font-medium text-xl my-3 block cursor-pointer'>
+										className='text-white font-medium text-xl my-3 block cursor-pointer'>
 										The Before Sunrise Experience
 									</Link>
 								</div>

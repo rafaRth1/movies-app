@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
-import { fetchMoviesTopRated } from '../../../store';
+import { fetchMoviesTopRated } from '@/store';
+import { Spinner } from '@/components';
+import { useAppDispatch, useAppSelector } from '@/hooks/useRedux';
 import { ReviewsCard } from './ReviewsCard';
-import { Spinner } from '../../../components';
 
 import './Reviews.css';
 
@@ -15,8 +15,8 @@ export const ReviewsPage = () => {
 	}, []);
 
 	return (
-		<section className='container-page-review p-4 h-screen'>
-			<h1 className='text-black dark:text-white block m-3 text-3xl font-semibold'>Reviews</h1>
+		<section className='container-page-review p-4'>
+			<h1 className='text-white block m-3 text-3xl font-semibold'>Reviews</h1>
 
 			{loading ? (
 				<Spinner className='h-40' />

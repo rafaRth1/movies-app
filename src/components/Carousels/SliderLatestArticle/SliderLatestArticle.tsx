@@ -1,7 +1,7 @@
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
-import { useAppDispatch, useAppSelector } from '../../../hooks';
-import { getContentModal, showModal } from '../../../store';
-import { Arrows } from '../../Arrows/Arrows';
+import { useAppDispatch, useAppSelector } from '@/hooks';
+import { getContentModal, showModal } from '@/store';
+import { Arrows } from '@/components/Arrows/Arrows';
 import { SliderLatestArticleCard } from './SliderLatestArticleCard';
 
 import './sliderLatestArticle.css';
@@ -26,7 +26,7 @@ export const SliderLatestArticle = () => {
 				hasTrack={false}
 				options={option}
 				aria-label='Carousel'>
-				<h2 className='text-black dark:text-white font-semibold text-xl p-1 my-3'>Latest Article</h2>
+				<h2 className='text-white font-semibold text-xl p-1 my-3'>Latest Article</h2>
 
 				<Arrows />
 

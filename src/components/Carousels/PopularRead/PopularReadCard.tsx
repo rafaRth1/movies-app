@@ -1,7 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { LazyImage } from '../../LazyImage/LazyImage';
-import { MoviesUpComing } from '../../../store/movies/interfaces';
-import { IoPerson } from 'react-icons/io5';
+import { LazyImage } from '@/components/LazyImage/LazyImage';
+import { MoviesUpComing } from '@/store/movies/interfaces';
 
 interface Props {
 	movie: MoviesUpComing;
@@ -25,7 +24,7 @@ export const PopularReadCard = ({ movie }: Props) => {
 			</div>
 
 			<div className='data-popular-read'>
-				<h3 className='text-black dark:text-white text-xl'>
+				<h3 className='text-white text-lg'>
 					<Link
 						to={`/read-more/${movie.id}`}
 						className='hover:text-indigo-700 transition-colors'>
@@ -33,12 +32,9 @@ export const PopularReadCard = ({ movie }: Props) => {
 					</Link>
 				</h3>
 
-				<span className='text-black dark:text-white text-sm my-2'>{movie.release_date}</span>
+				<span className='text-white text-sm my-2'>{movie.release_date}</span>
 
-				<p className='text-black dark:text-white flex items-center'>
-					<IoPerson className='text-black dark:text-white mr-2' />
-					<span> Vote Count: {movie.vote_count}</span>
-				</p>
+				<span className='block text-white'> Vote Count: {movie.vote_count}</span>
 			</div>
 		</div>
 	);

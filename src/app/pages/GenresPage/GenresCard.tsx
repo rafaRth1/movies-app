@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { MoviesGenreType } from '../../../store/movies/interfaces';
-import { LazyImage } from '../../../components';
+import { LazyImage } from '@/components';
+import { MoviesGenreType } from '@/store/movies/interfaces/';
 
 interface Props {
 	movie: MoviesGenreType;
@@ -10,7 +10,7 @@ export const GenresCard = ({ movie }: Props) => {
 	const navigate = useNavigate();
 
 	return (
-		<div className='card-genres text-black dark:text-white p-2'>
+		<div className='card-genres text-white p-2'>
 			<div className='card-genres-img relative'>
 				<LazyImage
 					placeholderSrc={`https://image.tmdb.org/t/p/w500_filter(blur)${movie.poster_path}`}
@@ -23,7 +23,7 @@ export const GenresCard = ({ movie }: Props) => {
 				/>
 			</div>
 			<div className='my-3 p-2'>
-				<h5 className='text-black dark:text-white font-medium mb-3 text-lg hover:text-indigo-700 dark:hover:text-indigo-700 transition-colors'>
+				<h5 className='text-white font-medium mb-3 text-lg hover:text-indigo-700 dark:hover:text-indigo-700 transition-colors'>
 					<Link to={`/movie-information/${movie.id}`}>{movie.title}</Link>
 				</h5>
 				<p className='text-xs'>{movie.release_date?.slice(0, 4)}</p>

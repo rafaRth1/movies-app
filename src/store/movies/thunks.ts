@@ -1,6 +1,6 @@
 import axios, { CancelTokenSource } from 'axios';
-import { Appthunk } from '../store';
-import clienteAxios from '../../config/clienteAxios';
+import { Appthunk } from '@/store';
+import clienteAxios from '@/config/clienteAxios';
 import {
 	getAllCategories,
 	getGenders,

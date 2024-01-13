@@ -29,7 +29,7 @@ export const MainPage = () => {
 	}, []);
 
 	return (
-		<div className='bg-neutral-100 dark:bg-neutral-800 transition-all p-2'>
+		<>
 			{moviesPopular.length === 0 ? (
 				<Spinner className='h-40' />
 			) : (
@@ -50,7 +50,7 @@ export const MainPage = () => {
 					<SliderNewMovies />
 				</>
 			)}
-		</div>
+		</>
 	);
 };
 

@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { AverageComponent, LazyImage } from '../../../components';
-import { MoviesNowPlaying } from '../../../store/movies/interfaces';
+import { AverageComponent, LazyImage } from '@/components';
+import { MoviesNowPlaying } from '@/store/movies/interfaces/';
 
 interface Props {
 	movie: MoviesNowPlaying;
@@ -25,10 +25,10 @@ export const MovieArchiveCard = ({ movie }: Props) => {
 			</div>
 
 			<div className='my-3 p-2'>
-				<h6 className='text-black dark:text-white font-semibold mb-3 text-lg hover:text-indigo-700 dark:hover:text-indigo-700'>
+				<h6 className='text-white font-semibold mb-3 text-lg hover:text-indigo-700 dark:hover:text-indigo-700'>
 					<Link to={`/movie-information/${movie.id}`}>{movie.title}</Link>
 				</h6>
-				<p className='text-xs text-black dark:text-white'>{movie.release_date.slice(0, 4)}</p>
+				<p className='text-xs text-white'>{movie.release_date.slice(0, 4)}</p>
 			</div>
 		</div>
 	);

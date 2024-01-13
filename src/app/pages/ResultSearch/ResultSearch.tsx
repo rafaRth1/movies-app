@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { fetchResultSearch } from '../../../store';
-import { usePagination, useAppDispatch, useAppSelector } from '../../../hooks';
-import { LazyImage, Pagination, Spinner } from '../../../components';
-import { MoviesResultSearch } from '../../../store/movies/interfaces';
+import { fetchResultSearch } from '@/store';
+import { usePagination, useAppDispatch, useAppSelector } from '@/hooks';
+import { LazyImage, Pagination, Spinner } from '@/components';
+import { MoviesResultSearch } from '@/store/movies/interfaces';
 import './ResultSearch.css';
 
 export const ResultSearch = () => {
@@ -21,7 +21,7 @@ export const ResultSearch = () => {
 
 	return (
 		<div className='container-page-result p-5'>
-			<h3 className='text-black dark:text-white block m-3 text-3xl font-semibold'>{`Search Results for '${name}'`}</h3>
+			<h3 className='text-white block m-3 text-3xl font-semibold'>{`Search Results for '${name}'`}</h3>
 
 			{loading ? (
 				<div className='w-full h-40'>
@@ -46,7 +46,7 @@ export const ResultSearch = () => {
 							</div>
 
 							<div className='my-3 p-2'>
-								<h6 className='text-black dark:text-white hover:text-indigo-700 dark:hover:text-indigo-700 font-medium mb-3 '>
+								<h6 className='text-white hover:text-indigo-700 dark:hover:text-indigo-700 font-medium mb-3 '>
 									<Link to={`/movie-archive/movie-information/${movies.id}`}>{movies.title}</Link>
 								</h6>
 							</div>

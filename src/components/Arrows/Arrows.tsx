@@ -10,7 +10,7 @@ export const Arrows = () => {
 					aria-label='Previous slide'
 					aria-controls='splide01-track'>
 					<IoChevronForwardOutline
-						className='cursor-pointer text-black dark:text-white'
+						className='cursor-pointer text-white'
 						size={20}
 					/>
 				</button>
@@ -20,7 +20,7 @@ export const Arrows = () => {
 					aria-label='Next slide'
 					aria-controls='splide01-track'>
 					<IoChevronForwardOutline
-						className='cursor-pointer text-black dark:text-white'
+						className='cursor-pointer text-white'
 						size={20}
 					/>
 				</button>

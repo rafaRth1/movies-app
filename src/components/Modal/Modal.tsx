@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../hooks/useRedux';
-import { getContentModal, showModal } from '../../store';
+import { useAppDispatch, useAppSelector } from '@/hooks/useRedux';
+import { getContentModal, showModal } from '@/store';
 import { IoCloseSharp, IoMenuOutline } from 'react-icons/io5';
-import { LazyImage } from '../LazyImage/LazyImage';
+import { LazyImage } from '@/components/LazyImage/LazyImage';
 
 import './modal.css';
 

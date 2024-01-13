@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ImageMovieInformation } from './components';
 import { BodyMovieInformation } from './components/BodyMovieInformation/BodyMovieInformation';
-import { fetchMovieInformation, fetchMovieVideo, fetchRecomendMovies } from '../../../store';
-import { useAppDispatch, useAppSelector } from '../../../hooks';
-import { Spinner } from '../../../components';
+import { fetchMovieInformation, fetchMovieVideo, fetchRecomendMovies } from '@/store';
+import { useAppDispatch, useAppSelector } from '@/hooks';
+import { Spinner } from '@/components';
 
 import './MovieInformation.css';
 

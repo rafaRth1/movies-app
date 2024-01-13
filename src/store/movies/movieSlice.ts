@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { initialState, Movies } from './';
+import { MovieReadMoreId } from './interfaces';
 
 export const movieSlice = createSlice({
 	name: 'movieReducer',
@@ -75,6 +76,10 @@ export const movieSlice = createSlice({
 			state.movieReadMoreId = action.payload;
 		},
 
+		setClearMovieSearchState: (state: Movies, action: any) => {
+			state.movieReadMoreId = action.payload;
+		},
+
 		getMovieInformation: (state: Movies, action: any) => {
 			state.loading = false;
 			state.movieInformation = action.payload;
@@ -126,4 +131,5 @@ export const {
 	getAllCategories,
 	getVideosMovie,
 	getMoviesRecommend,
+	setClearMovieSearchState,
 } = movieSlice.actions;

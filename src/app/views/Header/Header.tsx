@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAppDispatch, useDarkMode } from '../../../hooks';
-import { handleActiveNavigation, showModalSearch, switchTheme } from '../../../store';
+import { useAppDispatch, useDarkMode } from '@/hooks';
+import { handleActiveNavigation, showModalSearch, switchTheme } from '@/store';
 import { IoMenuOutline } from 'react-icons/io5';
-import { MdOutlineLogin, MdOutlineSearch, MdPersonAddAlt1, MdToggleOff, MdToggleOn } from 'react-icons/md';
-import LogoDark from '../../../assets/ingmar-logo-b.svg';
-import LogoLight from '../../../assets/ingmar-logo-a.svg';
+import { MdOutlineLogin, MdOutlineSearch, MdPersonAddAlt1 } from 'react-icons/md';
+import LogoDark from '@/assets/ingmar-logo-b.svg';
 
 import './Header.css';
 
@@ -16,7 +15,7 @@ export const Header = () => {
 	const navigate = useNavigate();
 
 	const iconOption = {
-		className: 'text-black dark:text-white',
+		className: 'text-white',
 		sizeIcon: 25,
 	};
 
@@ -28,13 +27,13 @@ export const Header = () => {
 
 	return (
 		<div className='container-header-full sticky top-0 h-22 w-full z-30'>
-			<header className='h-22 w-full bg-neutral-200 dark:bg-neutral-900 transition-all py-3 px-5 flex justify-between items-center'>
+			<header className='h-22 w-full bg-[#0D0D10] transition-colors py-3 px-5 flex justify-between items-center'>
 				<div
-					className='logo text-black dark:text-white text-3xl uppercase font-bold cursor-pointer p-1'
+					className='logo xtext-white text-3xl uppercase font-bold cursor-pointer p-1'
 					onClick={() => navigate('/')}>
 					<Link to='/'>
 						<img
-							src={isDarkMode ? LogoDark : LogoLight}
+							src={LogoDark}
 							alt='Image Logo'
 							className='w-full h-12'
 						/>
@@ -70,7 +69,7 @@ export const Header = () => {
 							size={iconOption.sizeIcon}
 						/>
 					</div>
-
+					{/* 
 					<div
 						className='switch-mode cursor-pointer'
 						onClick={handleSwitch}>
@@ -85,7 +84,7 @@ export const Header = () => {
 								size={iconOption.sizeIcon}
 							/>
 						)}
-					</div>
+					</div> */}
 
 					<div
 						className='menu-mobile cursor-pointer'

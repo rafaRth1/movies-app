@@ -1,4 +1,4 @@
-import { MovieReadMoreId } from '../../../../store/movies/interfaces';
+import { MovieReadMoreId } from '@/store/movies/interfaces/';
 import { IoArrowRedoCircleOutline } from 'react-icons/io5';
 
 interface Props {
@@ -9,19 +9,17 @@ export const AsideReadMore = ({ movieReadMoreId }: Props) => {
 	return (
 		<aside>
 			<div className='p-5 sticky top-24'>
-				<span className='flex items-center text-black dark:text-white text-xs uppercase mb-5'>
+				<span className='flex items-center text-white text-xs uppercase mb-5'>
 					<IoArrowRedoCircleOutline className='mr-1' />
 					Celluloid
 				</span>
-				<h1 className='text-black dark:text-white text-4xl uppercase mb-5 font-["rubik"]'>
-					{movieReadMoreId?.title}
-				</h1>
-				<span className='block text-black dark:text-white text-xl font-medium  uppercase mb-5'>
+				<h1 className='text-white text-4xl uppercase mb-5'>{movieReadMoreId?.title}</h1>
+				<span className='block text-white text-xl font-medium  uppercase mb-5'>
 					{movieReadMoreId?.tagline}
 				</span>
 
 				<div className='production-companies'>
-					<h3 className='text-black dark:text-white font-bold font-["rubik"]'>Production Companies</h3>
+					<h3 className='text-white font-bold'>Production Companies</h3>
 					{!!movieReadMoreId.production_companies &&
 						movieReadMoreId!.production_companies.map((production) => (
 							<div
@@ -37,7 +35,7 @@ export const AsideReadMore = ({ movieReadMoreId }: Props) => {
 									className='rounded-full w-10 mr-3 inline-block'
 								/>
 
-								<span className='font-medium text-black dark:text-white cursor-pointer transition-colors hover:text-indigo-700 dark:hover:text-indigo-700'>
+								<span className='font-medium text-white cursor-pointer transition-colors hover:text-indigo-700 dark:hover:text-indigo-700'>
 									{production?.name}
 								</span>
 							</div>

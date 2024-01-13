@@ -1,7 +1,3 @@
-.navigate {
-	transition: 0.5s ease-in-out all;
-}
-
 .navigate-content {
 	position: sticky;
 	top: 70px;

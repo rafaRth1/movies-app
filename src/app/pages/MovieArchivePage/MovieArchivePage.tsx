@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { fetchNowPlaying, handleResetStateMovieInformation } from '../../../store';
-import { usePagination, useAppDispatch, useAppSelector } from '../../../hooks';
-import { Pagination, Spinner } from '../../../components';
+import { fetchNowPlaying, handleResetStateMovieInformation } from '@/store';
+import { usePagination, useAppDispatch, useAppSelector } from '@/hooks';
+import { Pagination, Spinner } from '@/components';
 import { MovieArchiveCard } from './MovieArchiveCard';
 
 import './MovieArchive.css';
@@ -20,7 +20,7 @@ export const MovieArchivePage = () => {
 
 	return (
 		<section className='container-page-movie-archive p-4'>
-			<h3 className='text-black dark:text-white text-3xl font-bold block m-4'>Movies</h3>
+			<h3 className='text-white text-3xl font-bold block m-4'>Movies</h3>
 			{loading ? (
 				<Spinner className='h-40' />
 			) : (

@@ -1,6 +1,6 @@
 import { SplideSlide } from '@splidejs/react-splide';
-import { MoviesTopRated } from '../../../store/movies/interfaces';
-import { LazyImage } from '../../LazyImage/LazyImage';
+import { MoviesTopRated } from '@/store/movies/interfaces';
+import { LazyImage } from '@/components//LazyImage/LazyImage';
 import { Link, useNavigate } from 'react-router-dom';
 
 interface Props {
@@ -25,7 +25,7 @@ export const FeatureReviewsCard = ({ movie }: Props) => {
 					/>
 				</div>
 
-				<div className='data-review-feature text-black dark:text-white w-full'>
+				<div className='data-review-feature text-white w-full'>
 					<Link
 						to={`/read-more/${movie.id}`}
 						className='text-xl font-medium mb-3'>

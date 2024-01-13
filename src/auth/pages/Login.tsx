@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useForm } from '../../hooks';
-import { TextInput } from '../../components';
-import movieAppApi from '../../api/movieAppApi';
+import { useForm } from '@/hooks';
+import { TextInput } from '@/components';
 
 const formData = {
 	username: '',
@@ -22,6 +21,8 @@ export const Login = () => {
 		e.preventDefault();
 		setFormSubmitted(!formSubmitted);
 
+		//FIX: Manejar si se han logueado o si hicieron un error
+
 		try {
 			if (!Object.values(formState).includes('')) {
 				console.log('Logueado');
@@ -34,51 +35,47 @@ export const Login = () => {
 	};
 
 	return (
-		<div className='relative h-full'>
-			<div className='login h-full'>
-				<div className='flex justify-center flex-col-reverse md:flex-row h-full'>
-					<div className='formulary md:basis-1/2 lg:basis-2/5 flex items-center justify-center'>
-						<div className='m-8'>
-							<h2 className='text-black dark:text-white text-3xl font-medium mb-8 text-center'>
-								Login
-							</h2>
-							<form onSubmit={(e) => handleSubmit(e)}>
-								<TextInput
-									type={'text'}
-									label={'Username'}
-									name={'username'}
-									value={formState.username}
-									onChange={onInputChange}
-									isvalid={formValidation.usernameValid}
-									isvalidform={formSubmitted.toString()}
-								/>
-								<TextInput
-									type={'password'}
-									label={'Password'}
-									name={'password'}
-									value={formState.password}
-									onChange={onInputChange}
-									isvalid={formValidation.passwordValid}
-									isvalidform={formSubmitted.toString()}
-								/>
+		<div className='relative login h-[100dvh] bg-[#0D0D10]'>
+			<div className='flex justify-center items-center flex-col-reverse md:flex-row h-full'>
+				<div className='formulary md:basis-1/2 lg:basis-2/5 flex items-center justify-center'>
+					<div className='m-8'>
+						<h2 className='text-white text-3xl font-medium mb-8 text-center'>Login</h2>
+						<form onSubmit={(e) => handleSubmit(e)}>
+							<TextInput
+								type={'text'}
+								label={'Username'}
+								name={'username'}
+								value={formState.username}
+								onChange={onInputChange}
+								isvalid={formValidation.usernameValid}
+								isvalidform={formSubmitted.toString()}
+							/>
+							<TextInput
+								type={'password'}
+								label={'Password'}
+								name={'password'}
+								value={formState.password}
+								onChange={onInputChange}
+								isvalid={formValidation.passwordValid}
+								isvalidform={formSubmitted.toString()}
+							/>
 
-								<button
-									type='submit'
-									className='w-full bg-indigo-600 text-white text-lg rounded-2xl p-2 my-10'>
-									Enviar
-								</button>
+							<button
+								type='submit'
+								className='w-full bg-gradient-to-r from-[#3754ea] to-[#881cf8] text-white text-lg rounded-xl p-2 my-10'>
+								Enviar
+							</button>
 
-								<p className='text-black dark:text-white text-sm text-center'>
-									<Link to={'/register'}> Register </Link> | Lost Password
-								</p>
+							<p className='text-white text-sm text-center'>
+								<Link to={'/auth/register'}> Register </Link> | Lost Password
+							</p>
 
-								<Link
-									to={'/'}
-									className='bg-indigo-600 text-white text-lg rounded-2xl p-2 my-10 cursor-pointer block text-center'>
-									Go Movies
-								</Link>
-							</form>
-						</div>
+							<Link
+								to={'/'}
+								className='bg-gradient-to-r from-[#3754ea] to-[#881cf8] text-white text-lg rounded-xl p-2 my-10 cursor-pointer block text-center'>
+								Go Movies
+							</Link>
+						</form>
 					</div>
 				</div>
 			</div>

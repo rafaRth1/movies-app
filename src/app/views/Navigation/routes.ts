@@ -1,3 +1,6 @@
+import { IoChatbubbles, IoFileTrayFull } from 'react-icons/io5';
+import { IconType } from 'react-icons/lib';
+
 interface Route {
 	to: string;
 	name: string;

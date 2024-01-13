@@ -1,6 +1,6 @@
-import { Arrows } from '../../../components';
-import { useAppSelector } from '../../../hooks';
 import { Splide, SplideTrack } from '@splidejs/react-splide';
+import { useAppSelector } from '@/hooks';
+import { Arrows } from '@/components';
 import { SliderForYouCard } from './SliderForYouCard';
 
 import './SliderForYou.css';
@@ -36,7 +36,7 @@ export const SliderForYou = () => {
 				options={option}
 				hasTrack={false}
 				aria-label='Carousel'>
-				<h2 className='text-black dark:text-white font-semibold text-xl p-1 my-3'>For You</h2>
+				<h2 className='text-white font-semibold text-xl p-1 my-3'>For you</h2>
 
 				<Arrows />
 

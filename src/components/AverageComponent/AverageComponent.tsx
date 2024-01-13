@@ -11,29 +11,35 @@ export const AverageComponent = ({ average, styles }: Props) => {
 
 	const typeColorAverage = (): { 0: string; 1: string } => {
 		if (value >= 70 && value <= 100) {
-			return { 0: '#14532d', 1: '#22c55e' };
+			return { 0: '#22c55e', 1: '#22c55e' };
 		} else if (value >= 40 && value <= 69) {
-			return { 0: '#808214', 1: '#f7ce00' };
+			return { 0: '#eab308', 1: '#f7ce00' };
 		} else {
-			return { 0: '#991b1b', 1: '#dc2626' };
+			return { 0: '#ef4444', 1: '#dc2626' };
 		}
 	};
 
 	return (
-		<div
-			className={`progress-circle over50 p${value}`}
-			style={{ ...styles, backgroundColor: `${typeColorAverage()[0]}` }}>
-			<span className='font-semibold'>{value}%</span>
-			<div className='left-half-clipper'>
-				<figure
-					className='first50-bar'
-					style={{
-						backgroundColor: `${value === 0 ? 'transparent' : `${typeColorAverage()[1]}`}`,
-					}}></figure>
-				<figure
-					className='value-bar'
-					style={{ backgroundColor: `${typeColorAverage()[1]}` }}></figure>
-			</div>
+		<div className='absolute bottom-2 right-2'>
+			<svg
+				viewBox='0 0 36 36'
+				className='circular-chart w-[50px] h-[50px]'>
+				<path
+					className='circle'
+					stroke={typeColorAverage()[0]}
+					fill='black'
+					fillOpacity={0.6}
+					strokeWidth={2.8}
+					strokeLinecap='round'
+					strokeDasharray={`${value}, 100`}
+					d='M18 2.0845
+      a 15.9155 15.9155 0 0 1 0 31.831
+      a 15.9155 15.9155 0 0 1 0 -31.831'
+				/>
+			</svg>
+			<span className='font-semibold text-sm text-white absolute bottom-[15px] right-[11px]'>
+				{value.toString().slice(0, 2)}%
+			</span>
 		</div>
 	);
 };

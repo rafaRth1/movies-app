@@ -1,7 +1,7 @@
 import { SplideSlide } from '@splidejs/react-splide';
 import { Link } from 'react-router-dom';
-import { MoviesPopular } from '../../../store/movies/interfaces';
-import { LazyImage } from '../../LazyImage/LazyImage';
+import { MoviesPopular } from '@/store/movies/interfaces';
+import { LazyImage } from '@/components/LazyImage/LazyImage';
 
 // https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg
 
@@ -25,7 +25,7 @@ export const SliderForYouCard = ({ movie }: Props) => {
 					<div className='mb-3'>
 						<Link
 							to={`/read-more/${movie.id}`}
-							className='text-white text-xl block w-full whitespace-normal'>
+							className='text-white text-lg block w-full whitespace-normal'>
 							{movie.original_title}
 						</Link>
 					</div>
@@ -33,7 +33,7 @@ export const SliderForYouCard = ({ movie }: Props) => {
 					<div className='mb-3'>
 						<Link
 							to={`/read-more/${movie.id}`}
-							className='text-white text-sm z-10 bg-indigo-800 hover:bg-indigo-900 transition-colors p-2 rounded-3xl'>
+							className='text-white z-10 bg-gradient-to-r from-[#3754ea] to-[#881cf8] py-3 px-4 rounded-lg'>
 							Read More
 						</Link>
 					</div>

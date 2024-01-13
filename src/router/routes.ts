@@ -1,6 +1,4 @@
 import { LazyExoticComponent, lazy } from 'react';
-import { MoviesRoutes } from '../app/routes/MoviesRoutes';
-import { AuthRotues } from '../auth/routes/AuthRotues';
 
 type JSXComponent = () => JSX.Element;
 

@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react';
-import { useCarousel } from '../../hooks';
+import { useCarousel } from '@/hooks';
 import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5';
 
 import './Carousel.css';

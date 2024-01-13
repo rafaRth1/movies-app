@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { AverageComponent, LazyImage } from '../../../components';
-import { genresData } from '../../../data/genres';
-import { MoviesTopRated } from '../../../store/movies/interfaces';
+import { AverageComponent, LazyImage } from '@/components';
+import { MoviesTopRated } from '@/store/movies/interfaces';
+import { genresData } from '@/data/genres';
 
 interface Props {
 	movie: MoviesTopRated;
@@ -26,10 +26,10 @@ export const ReviewsCard = ({ movie }: Props) => {
 			</div>
 
 			<div className='body-review'>
-				<p className='text-black dark:text-white text-xs mt-3'>{movie.release_date}</p>
+				<p className='text-white text-xs mt-3'>{movie.release_date}</p>
 
 				<h6
-					className='text-black dark:text-white font-medium my-2 cursor-pointer text-2xl font-["rubik"] dark:hover:text-indigo-700'
+					className='text-white font-medium my-2 cursor-pointer text-2xl dark:hover:text-indigo-700'
 					onClick={() => navigate(`/read-more/${movie.id}`)}>
 					{movie.original_title}
 				</h6>
@@ -37,7 +37,7 @@ export const ReviewsCard = ({ movie }: Props) => {
 				<div className='creator mb-2'>
 					<a
 						href='#'
-						className='text-black dark:text-white uppercase text-xs font-medium dark:hover:text-indigo-700'>
+						className='text-white uppercase text-xs font-medium dark:hover:text-indigo-700'>
 						{movie.title}
 					</a>
 				</div>

@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
-import { HeaderPlaceHolder } from '../components/HeaderPlaceholder/HeaderPlaceholder';
+import { HeaderPlaceHolder } from '@/components/HeaderPlaceholder/HeaderPlaceholder';
 
 const MoviesRoutesLazy = lazy(() => import('../app/routes/MoviesRoutes'));
 const AuthRotuesLazy = lazy(() => import('../auth/routes/AuthRotues'));

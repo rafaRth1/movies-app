@@ -1,7 +1,7 @@
-import { getContentModal, showModal } from '../../../store';
-import { useAppDispatch } from '../../../hooks';
-import { MoviesUpComing } from '../../../store/movies/interfaces';
-import { LazyImage } from '../../LazyImage/LazyImage';
+import { getContentModal, showModal } from '@/store';
+import { useAppDispatch } from '@/hooks';
+import { MoviesUpComing } from '@/store/movies/interfaces';
+import { LazyImage } from '@/components/LazyImage/LazyImage';
 
 interface Props {
 	movie: MoviesUpComing;

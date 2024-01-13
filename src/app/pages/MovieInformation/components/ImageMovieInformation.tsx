@@ -1,4 +1,4 @@
-import { useAppSelector } from '../../../../hooks';
+import { useAppSelector } from '@/hooks';
 
 export const ImageMovieInformation = () => {
 	const { movieInformation } = useAppSelector((state) => state.movie);

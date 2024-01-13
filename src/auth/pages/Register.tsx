@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useForm } from '../../hooks';
-import { TextInput } from '../../components';
-import movieAppApi from '../../api/movieAppApi';
+import { useForm } from '@/hooks';
+import { TextInput } from '@/components';
 
 const formData = {
 	firstName: '',
@@ -26,11 +25,11 @@ export const Register = () => {
 	const { formState, formValidation, onInputChange } = useForm(formData, formValidations);
 	const [formSubmitted, setFormSubmitted] = useState(false);
 
-	// console.log(firstNameValid);
-
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setFormSubmitted(!formSubmitted);
+
+		//FIX: Manejar si se han registrado o si hicieron un error
 
 		try {
 			if (!Object.values(formState).includes('') && formData.password === formData.confirmPassword) {
@@ -44,13 +43,11 @@ export const Register = () => {
 	};
 
 	return (
-		<div className='content-register'>
+		<div className='content-register bg-[#0D0D10]'>
 			<div className='register h-full flex justify-center items-center flex-col md:flex-row'>
 				<div className='formulary flex justify-center items-center inputs px-4 md:w-1/2 lg:w-2/6'>
 					<div className='m-8'>
-						<h2 className='text-black dark:text-white text-center text-3xl font-medium my-10'>
-							Registration
-						</h2>
+						<h2 className='text-white text-center text-3xl font-medium my-10'>Registration</h2>
 
 						<form onSubmit={(e) => handleSubmit(e)}>
 							<TextInput
@@ -115,17 +112,17 @@ export const Register = () => {
 
 							<input
 								type='submit'
-								className='w-full bg-indigo-600 text-white text-lg rounded-2xl p-2 my-10 cursor-pointer'
+								className='w-full bg-gradient-to-r from-[#3754ea] to-[#881cf8] text-white text-lg rounded-xl p-2 my-10 cursor-pointer'
 							/>
 						</form>
 
-						<p className='text-black dark:text-white text-sm text-center'>
-							<Link to={'/login'}> Login </Link> | Lost Password
+						<p className='text-white text-sm text-center'>
+							<Link to={'/auth/login'}> Login </Link> | Forget Password
 						</p>
 
 						<Link
 							to={'/'}
-							className=' bg-indigo-600 text-white text-lg rounded-2xl p-2 my-10 cursor-pointer block text-center '>
+							className='bg-gradient-to-r from-[#3754ea] to-[#881cf8] text-white text-lg rounded-xl p-2 my-10 cursor-pointer block text-center '>
 							Go Movies
 						</Link>
 					</div>

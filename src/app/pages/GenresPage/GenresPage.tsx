@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../../hooks';
-import { fetchMoviesGenreType, handleResetStateMovieInformation } from '../../../store';
-import { Spinner } from '../../../components';
+import { useAppDispatch, useAppSelector } from '@/hooks';
+import { fetchMoviesGenreType, handleResetStateMovieInformation } from '@/store';
+import { Spinner } from '@/components';
 import { GenresCard } from './GenresCard';
 
 import './GenresPage.css';
@@ -20,7 +20,7 @@ export const PageGenres = () => {
 
 	return (
 		<div className='container-page-genres p-4'>
-			<h1 className='text-black dark:text-white block m-3 text-3xl font-semibold'>{state.name}</h1>
+			<h1 className='text-white block m-3 text-3xl font-semibold'>{state.name}</h1>
 
 			{loading ? (
 				<Spinner className='h-40' />

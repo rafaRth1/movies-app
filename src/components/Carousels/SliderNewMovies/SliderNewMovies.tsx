@@ -1,7 +1,7 @@
-import { useAppSelector } from '../../../hooks';
 import { Options, Splide, SplideTrack } from '@splidejs/react-splide';
+import { useAppSelector } from '@/hooks';
 import { SliderNewMoviesCard } from './SliderNewMoviesCard';
-import { Arrows } from '../../Arrows/Arrows';
+import { Arrows } from '@/components/Arrows/Arrows';
 
 import './sliderNewMovies.css';
 
@@ -30,7 +30,7 @@ export const SliderNewMovies = () => {
 				options={option}
 				hasTrack={false}
 				aria-label='Carousel'>
-				<h2 className='text-black dark:text-white font-semibold text-xl p-1 my-3'>New Movies Archive</h2>
+				<h2 className='text-white font-semibold text-xl p-1 my-3'>New Movies Archive</h2>
 
 				<Arrows />
 

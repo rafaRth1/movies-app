@@ -21,7 +21,7 @@ const SubMenuNav = ({ to, data }: Props) => {
 				onClick={() => setIsActive(!isActive)}
 				className='arrow-sub-menu absolute right-2 top-4 cursor-pointer'>
 				<MdExpandMore
-					className='text-black dark:text-white'
+					className='text-white'
 					size={25}
 				/>
 			</div>
@@ -34,7 +34,7 @@ const SubMenuNav = ({ to, data }: Props) => {
 								to={`/genres/${data.id}`}
 								aria-current='page'
 								state={{ name: data.name }}
-								className='p-3 w-full block hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md'>
+								className='p-3 w-full block bg-gradient-to-r hover:from-[#3754ea] hover:to-[#881cf8] rounded-md'>
 								{data.name}
 							</Link>
 						</li>

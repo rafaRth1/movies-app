@@ -18,7 +18,7 @@ export const Pagination = ({
 	totalNumPages,
 	name,
 }: Props) => {
-	const pages: any[] = [];
+	const pages = [];
 
 	for (let i = 1; i <= Math.ceil(movies.length / amountPage); i++) {
 		pages.push(i);
@@ -53,9 +53,7 @@ export const Pagination = ({
 						<IoArrowBackCircleSharp
 							size={30}
 							onClick={prevPage}
-							className={`${
-								currentPage === 1 ? 'hidden' : 'block'
-							} text-black dark:text-white cursor-pointer`}
+							className={`${currentPage === 1 ? 'hidden' : 'block'} text-white cursor-pointer`}
 						/>
 						{
 							<ul className='list-none flex'>
@@ -73,9 +71,7 @@ export const Pagination = ({
 						<IoArrowForwardCircle
 							size={30}
 							onClick={nextPage}
-							className={`${
-								currentPage === totalNumPages ? 'hidden' : 'block'
-							} text-black dark:text-white cursor-pointer`}
+							className={`${currentPage === totalNumPages ? 'hidden' : 'block'} text-white cursor-pointer`}
 						/>
 					</div>
 				</div>

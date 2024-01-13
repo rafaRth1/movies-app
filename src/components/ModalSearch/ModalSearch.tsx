@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { saveValueSearch, showModalSearch } from '../../store';
+import { useAppDispatch, useAppSelector } from '@/hooks';
+import { saveValueSearch, showModalSearch } from '@/store';
 import { IoCloseSharp } from 'react-icons/io5';
 
 import './ModalSearch.css';

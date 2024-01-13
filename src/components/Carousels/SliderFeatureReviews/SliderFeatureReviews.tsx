@@ -1,6 +1,6 @@
 import { Options, Splide, SplideTrack } from '@splidejs/react-splide';
-import { useAppSelector } from '../../../hooks';
-import { Arrows } from '../../Arrows/Arrows';
+import { useAppSelector } from '@/hooks';
+import { Arrows } from '@/components/Arrows/Arrows';
 import { FeatureReviewsCard } from './FeatureReviewsCard';
 
 import './sliderFeatureReviews.css';
@@ -20,7 +20,7 @@ export const SliderFeatureReviews = () => {
 				options={option}
 				hasTrack={false}
 				aria-label='Carousel'>
-				<h2 className='text-black dark:text-white font-semibold text-xl p-1 my-3'>Featured Review</h2>
+				<h2 className='text-white font-semibold text-xl p-1 my-3'>Featured Review</h2>
 
 				<Arrows />
 

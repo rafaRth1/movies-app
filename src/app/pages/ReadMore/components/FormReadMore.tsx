@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useForm } from '../../../../hooks';
-import { Message, TextInput } from '../../../../components';
+import { useForm } from '@/hooks';
+import { Message, TextInput } from '@/components';
 
 const formData = {
 	name: '',
@@ -25,6 +25,7 @@ export const FormReadMore = () => {
 		e.preventDefault();
 
 		console.log(formState);
+		// FIX: Hacer algo con la información que se manda en el formulario.
 	};
 
 	const { message } = msg;
@@ -72,13 +73,13 @@ export const FormReadMore = () => {
 			<div className='w-full flex flex-col my-3'>
 				<label
 					htmlFor='website'
-					className='text-black dark:text-white font-["rubik"] mb-2'>
+					className='text-white mb-2'>
 					Comment *
 				</label>
 				<textarea
 					name='comment'
 					id='comment'
-					className='w-full border-2 border-neutral-500 dark:border-neutral-700 bg-transparent px-2 py-1 rounded-2xl h-auto text-black dark:text-white transition-all'
+					className='w-full border-2 border-neutral-700 bg-transparent px-2 py-1 rounded-2xl h-auto text-white'
 					value={formState.comment}
 					onChange={onInputChange}></textarea>
 			</div>
@@ -88,7 +89,7 @@ export const FormReadMore = () => {
 			<input
 				type='submit'
 				value='Post Comment'
-				className='text-black dark:text-white text-xl bg-indigo-800 w-full rounded-2xl my-3 p-2 cursor-pointer transition-all font-["rubik"]'
+				className='text-white text-lg bg-gradient-to-r from-[#3754ea] to-[#881cf8] w-full rounded-lg my-3 p-2 cursor-pointer'
 				onClick={(e) => handleSubmit(e)}
 			/>
 		</form>

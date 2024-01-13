@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { SplideSlide } from '@splidejs/react-splide';
-import { AverageComponent, LazyImage } from '../..';
-import { MoviesPopular } from '../../../store/movies/interfaces';
+import { AverageComponent, LazyImage } from '@/components';
+import { MoviesPopular } from '@/store/movies/interfaces';
 
 interface Props {
 	movie: MoviesPopular;
@@ -28,8 +28,8 @@ export const SliderNewMoviesCard = ({ movie }: Props) => {
 				</div>
 
 				<div className='info-card-movie'>
-					<h3 className='text-black dark:text-white font-medium text-base mt-5'>{movie.title}</h3>
-					<small className='text-black dark:text-white'>{movie.release_date}</small>
+					<h3 className='text-white font-medium text-base mt-5'>{movie.title}</h3>
+					<small className='text-white'>{movie.release_date}</small>
 				</div>
 			</section>
 		</SplideSlide>
