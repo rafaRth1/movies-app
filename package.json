@@ -11,6 +11,7 @@
     "@reduxjs/toolkit": "^1.8.1",
     "@splidejs/react-splide": "^0.7.12",
     "axios": "^0.27.2",
+    "extract-colors": "^4.0.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^8.0.1",

@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { ImageMovieInformation } from './components';
 import { BodyMovieInformation } from './components/BodyMovieInformation/BodyMovieInformation';
 import { fetchMovieInformation, fetchMovieVideo, fetchRecomendMovies } from '@/store';
 import { useAppDispatch, useAppSelector } from '@/hooks';
@@ -11,7 +10,7 @@ import './MovieInformation.css';
 export const MovieInformationPage = () => {
 	const { id } = useParams();
 	const dispatch = useAppDispatch();
-	const { movieInformation, arrayMoviesRecommend } = useAppSelector((state) => state.movie);
+	const { movieInformation } = useAppSelector((state) => state.movie);
 
 	useEffect(() => {
 		dispatch(fetchMovieInformation(id));
@@ -29,7 +28,14 @@ export const MovieInformationPage = () => {
 		<div className='contaniner-movie-information'>
 			{Object.keys(movieInformation).length !== 0 ? (
 				<div className='content-movie-information'>
-					<ImageMovieInformation />
+					<div className='img-movie-information relative'>
+						<img
+							src={`https://image.tmdb.org/t/p/original/${movieInformation?.backdrop_path}`}
+							alt=''
+							className='h-full w-full object-cover rounded-md'
+						/>
+					</div>
+
 					<BodyMovieInformation />
 				</div>
 			) : (

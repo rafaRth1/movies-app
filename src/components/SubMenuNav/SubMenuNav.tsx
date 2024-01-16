@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MdExpandMore } from 'react-icons/md';
+import { IoChevronDownSharp } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 
 interface Props {
@@ -19,10 +19,10 @@ const SubMenuNav = ({ to, data }: Props) => {
 		<>
 			<div
 				onClick={() => setIsActive(!isActive)}
-				className='arrow-sub-menu absolute right-2 top-4 cursor-pointer'>
-				<MdExpandMore
+				className='arrow-sub-menu absolute right-4 top-[17px] cursor-pointer'>
+				<IoChevronDownSharp
 					className='text-white'
-					size={25}
+					size={23}
 				/>
 			</div>
 

@@ -1,17 +1,12 @@
-import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ImageLoad, LazyImage } from '@/components';
 import { useAppSelector } from '@/hooks';
-import { ModalVideo } from '@/components/ModalVideo/ModalVideo';
 
 import './BodyMovieInformation.css';
 
 export const BodyMovieInformation = () => {
-	const [showModal, setShowModal] = useState(false);
-	const { movieInformation, arrayMovieVideos, arrayMoviesRecommend } = useAppSelector((state) => state.movie);
+	const { movieInformation, arrayMoviesRecommend } = useAppSelector((state) => state.movie);
 	const navigate = useNavigate();
-
-	const filterVideoTrailer = arrayMovieVideos.filter((video) => video.type === 'Trailer');
 
 	return (
 		<div className='body-movie-information px-3'>
@@ -87,7 +82,7 @@ export const BodyMovieInformation = () => {
 									</div>
 								</div>
 
-								<p className='text-white text-justify text-lg'>{movieInformation.overview}</p>
+								<p className='text-white text-lg'>{movieInformation.overview}</p>
 							</div>
 						</div>
 					</div>
@@ -123,9 +118,7 @@ export const BodyMovieInformation = () => {
 
 				<aside className='px-3'>
 					<div className='play-trailer w-full'>
-						<button
-							className='text-white text-xl bg-gradient-to-r from-[#3754ea] to-[#881cf8] px-4 py-3 w-full my-2 rounded-2xl'
-							onClick={() => setShowModal(true)}>
+						<button className='text-white text-xl bg-gradient-to-r from-[#3754ea] to-[#881cf8] px-4 py-3 w-full my-2 rounded-2xl'>
 							Play Trailer
 						</button>
 
@@ -170,11 +163,6 @@ export const BodyMovieInformation = () => {
 					</ul>
 				</div>
 			)}
-
-			{/* <ModalVideo
-				showModal={showModal}
-				setShowModal={setShowModal}
-			/> */}
 		</div>
 	);
 };

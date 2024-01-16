@@ -5,6 +5,7 @@ const clienteAxios = axios.create({
 	params: {
 		api_key: import.meta.env.VITE_KEY_API_MOVIE,
 		language: 'es-ES',
+		limit: '5',
 	},
 });
 

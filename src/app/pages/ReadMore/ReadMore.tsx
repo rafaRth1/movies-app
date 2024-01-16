@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useLayoutEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchSearchMovieId, setClearMovieSearchState } from '@/store';
 import { useAppDispatch, useAppSelector } from '@/hooks';
@@ -8,14 +8,9 @@ import { AsideReadMore, FormReadMore, BodyReadMore } from './components';
 import './ReadMore.css';
 
 export const ReadMore = () => {
-	const [isLoading, setIsLoading] = useState(true);
 	const { movieReadMoreId } = useAppSelector((state) => state.movie);
 	const { id } = useParams();
 	const dispatch = useAppDispatch();
-
-	const onLoad = () => {
-		setIsLoading(false);
-	};
 
 	useLayoutEffect(() => {
 		dispatch(fetchSearchMovieId(id));

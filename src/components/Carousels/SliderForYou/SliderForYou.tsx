@@ -30,7 +30,13 @@ export const SliderForYou = () => {
 	const { moviesPopular } = useAppSelector((state) => state.movie);
 
 	return (
-		<div className='container-slider-foryou px-3 my-3'>
+		<div className='container-slider-foryou relative px-3 my-3 z-20'>
+			<div className='absolute w-full h-full  gradients-one flex justify-evenly items-center z-0'>
+				<div className='w-[250px] h-[250px] rounded-full bg-[#3730A3] blur-[150px]'></div>
+				<div className='w-[250px] h-[250px] rounded-full bg-[#B84234] blur-[150px]'></div>
+				<div className='w-[250px] h-[250px] rounded-full bg-[#881cf8] blur-[150px]'></div>
+			</div>
+
 			<Splide
 				tag='section'
 				options={option}

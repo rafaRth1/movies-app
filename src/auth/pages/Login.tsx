@@ -25,9 +25,9 @@ export const Login = () => {
 
 		try {
 			if (!Object.values(formState).includes('')) {
-				console.log('Logueado');
+				// console.log('Logueado');
 			} else {
-				console.log('Falta Completar');
+				// console.log('Falta Completar');s
 			}
 		} catch (error) {
 			console.log(error);

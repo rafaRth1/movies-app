@@ -33,9 +33,9 @@ export const Register = () => {
 
 		try {
 			if (!Object.values(formState).includes('') && formData.password === formData.confirmPassword) {
-				console.log('Registrado');
+				// console.log('Registrado');
 			} else {
-				console.log('Falta Completar');
+				// console.log('Falta Completar');
 			}
 		} catch (error) {
 			console.log(error);

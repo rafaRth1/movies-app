@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useDarkMode } from '@/hooks';
 import { handleActiveNavigation, showModalSearch, switchTheme } from '@/store';
-import { IoMenuOutline } from 'react-icons/io5';
-import { MdOutlineLogin, MdOutlineSearch, MdPersonAddAlt1 } from 'react-icons/md';
+import { IoExitOutline, IoMenuOutline, IoPersonAddOutline, IoSearchOutline } from 'react-icons/io5';
 import LogoDark from '@/assets/ingmar-logo-b.svg';
 
 import './Header.css';
@@ -27,7 +26,7 @@ export const Header = () => {
 
 	return (
 		<div className='container-header-full sticky top-0 h-22 w-full z-30'>
-			<header className='h-22 w-full bg-[#0D0D10] transition-colors py-3 px-5 flex justify-between items-center'>
+			<header className='h-22 w-full bg-[#0D0D10] backdrop-blur-xl bg-opacity-70 transition-colors py-3 px-5 flex justify-between items-center'>
 				<div
 					className='logo xtext-white text-3xl uppercase font-bold cursor-pointer p-1'
 					onClick={() => navigate('/')}>
@@ -42,7 +41,7 @@ export const Header = () => {
 
 				<div className='flex gap-3'>
 					<div className='register cursor-pointer'>
-						<MdPersonAddAlt1
+						<IoPersonAddOutline
 							className={iconOption.className}
 							size={iconOption.sizeIcon}
 							onClick={() => {
@@ -52,7 +51,7 @@ export const Header = () => {
 					</div>
 
 					<div className='login cursor-pointer'>
-						<MdOutlineLogin
+						<IoExitOutline
 							className={iconOption.className}
 							size={iconOption.sizeIcon}
 							onClick={() => {
@@ -64,7 +63,7 @@ export const Header = () => {
 					<div
 						className='search cursor-pointer'
 						onClick={() => dispatch(showModalSearch(true))}>
-						<MdOutlineSearch
+						<IoSearchOutline
 							className={iconOption.className}
 							size={iconOption.sizeIcon}
 						/>

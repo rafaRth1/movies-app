@@ -23,7 +23,7 @@ export const PopularReadCard = ({ movie }: Props) => {
 				/>
 			</div>
 
-			<div className='data-popular-read'>
+			<div className='data-popular-read flex flex-col gap-1'>
 				<h3 className='text-white text-lg'>
 					<Link
 						to={`/read-more/${movie.id}`}
@@ -32,9 +32,11 @@ export const PopularReadCard = ({ movie }: Props) => {
 					</Link>
 				</h3>
 
-				<span className='text-white text-sm my-2'>{movie.release_date}</span>
+				<span className='text-neutral-300 text-sm'>Popularity: {movie.popularity}</span>
 
-				<span className='block text-white'> Vote Count: {movie.vote_count}</span>
+				<span className='text-neutral-300 text-sm'> Vote Count: {movie.vote_count}</span>
+
+				<span className='text-neutral-300 text-sm'>{movie.release_date}</span>
 			</div>
 		</div>
 	);

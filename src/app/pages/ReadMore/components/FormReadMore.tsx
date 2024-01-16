@@ -24,7 +24,7 @@ export const FormReadMore = () => {
 	const handleSubmit = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
 		e.preventDefault();
 
-		console.log(formState);
+		// console.log(formState);
 		// FIX: Hacer algo con la información que se manda en el formulario.
 	};
 
