@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAppDispatch, useDarkMode } from '@/hooks';
+import { useAppDispatch } from '@/hooks';
 import { handleActiveNavigation, showModalSearch, switchTheme } from '@/store';
 import { IoExitOutline, IoMenuOutline, IoPersonAddOutline, IoSearchOutline } from 'react-icons/io5';
 import LogoDark from '@/assets/ingmar-logo-b.svg';
@@ -8,8 +8,7 @@ import LogoDark from '@/assets/ingmar-logo-b.svg';
 import './Header.css';
 
 export const Header = () => {
-	const [themeDark, setThemeDark] = useState(false);
-	const [isDarkMode, toggleDarkMode] = useDarkMode();
+	// const [themeDark, setThemeDark] = useState(false);
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
 
@@ -19,16 +18,16 @@ export const Header = () => {
 	};
 
 	const handleSwitch = () => {
-		toggleDarkMode(isDarkMode);
-		setThemeDark(!themeDark);
-		dispatch(switchTheme(themeDark));
+		// toggleDarkMode(isDarkMode);
+		// setThemeDark(!themeDark);
+		// dispatch(switchTheme(themeDark));
 	};
 
 	return (
-		<div className='container-header-full sticky top-0 h-22 w-full z-30'>
-			<header className='h-22 w-full bg-[#0D0D10] backdrop-blur-xl bg-opacity-70 transition-colors py-3 px-5 flex justify-between items-center'>
+		<div className='container-header-full sticky top-0 h-22 w-full z-30 bg-[#0D0D10] backdrop-blur-xl bg-opacity-70 backdrop-saturate-150'>
+			<header className='h-22 w-full py-3 px-5 flex justify-between items-center'>
 				<div
-					className='logo xtext-white text-3xl uppercase font-bold cursor-pointer p-1'
+					className='logo text-white text-3xl uppercase font-bold cursor-pointer p-1'
 					onClick={() => navigate('/')}>
 					<Link to='/'>
 						<img

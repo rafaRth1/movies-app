@@ -9,16 +9,13 @@ import { MdClose } from 'react-icons/md';
 import './Navigation.css';
 
 export const Navigation = () => {
-	const { themeDark, activeNavigation } = useAppSelector((state) => state.movie);
+	const { activeNavigation } = useAppSelector((state) => state.movie);
 	const { pathname } = useLocation();
 	const dispatch = useAppDispatch();
 	const listClassLI = `rounded-2xl block text-md`;
 
 	return (
-		<nav
-			className={`navigate bg-[#0D0D10] transition-colors p-4 ${
-				activeNavigation ? 'active-menu-movil' : ''
-			}`}>
+		<nav className={`navigate bg-[#0D0D10] p-4 ${activeNavigation ? 'active-menu-movil' : ''}`}>
 			<MdClose
 				color={'white'}
 				size={30}
